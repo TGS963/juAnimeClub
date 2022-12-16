@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  body {
+    @apply bg-gray-500 font-sans;
+    font-family: "Alata", system-ui, sans-serif;
+  }
+  path {
+    @apply transition-none;
+  }
+  svg {
+    @apply transition-none;
+  }
+  g {
+    @apply transition-none;
+  }
+}
+
+@layer components {
+  .animate {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    width: 7px;
+  }
+  .no-scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255, 0.5);
+    border-radius: 25px;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-animate {
+    @apply transition-none;
+  }
+
+  .btn {
+    @apply flex h-16 animate-scale-in items-center justify-center gap-5 rounded-full border-none px-4 text-lg font-normal normal-case;
+  }
+  .btn-primary {
+    @apply animate-scale-in bg-indigo-500 text-indigo-50 outline-none hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700;
+  }
+  .btn-error {
+    @apply animate-scale-in bg-red-500 text-red-50 outline-none hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-red-700;
+  }
+
+  .input {
+    @apply h-16 w-full animate-scale-in rounded-full bg-slate-600 px-4 text-slate-50 outline-none focus-visible:outline-2 focus-visible:outline-slate-700 sm:w-96;
+  }
+
+  .card {
+    @apply m-2 rounded-xl bg-slate-900 bg-opacity-95 ring-2 ring-slate-50/10 backdrop-blur-xl sm:p-10;
+  }
+}

@@ -1,0 +1,6 @@
+out
+node_modules
+.next
+next.config.js
+postcss.config.js
+README.md

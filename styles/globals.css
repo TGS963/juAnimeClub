@@ -9,7 +9,7 @@
     @apply transition-all duration-300 ease-in-out;
   }
   body {
-    @apply bg-gray-500 font-sans;
+    @apply bg-gray-900 font-sans text-lg text-slate-50;
     font-family: "Alata", system-ui, sans-serif;
   }
   path {

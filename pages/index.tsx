@@ -23,7 +23,7 @@ const Index = () => {
       {/*TRENDING*/}
       <div className="flex h-3/4 w-full flex-col gap-6">
         <p className="p-6 text-4xl underline underline-offset-4">Trending</p>
-        <div className="flex h-96 max-h-fit flex-row gap-8">
+        <div className="flex h-96 max-h-fit shrink-0 flex-row flex-nowrap gap-8 overflow-x-auto">
           <TrendCard
             articleName="Keikenzumi na Kimi to, Keiken Zero na Ore ga, Otsukiaisuru Hanashi Christmas Key Visual revealed! "
             articleDesc="Twitter: Anime Trending"
@@ -33,6 +33,11 @@ const Index = () => {
             articleName="'SPY x FAMILY' - Episode 24 Visual!"
             articleDesc="Twitter: Anime Trending"
             articleImage="two"
+          />
+          <TrendCard
+            articleName="Hokkaido Gals Are Super Adorable! - Anime Teaser Visual!"
+            articleDesc="Twitter: Anime Trending"
+            articleImage="three"
           />
           <TrendCard
             articleName="Hokkaido Gals Are Super Adorable! - Anime Teaser Visual!"
@@ -70,11 +75,13 @@ const Index = () => {
         title="Events!"
         list={["Cosplay", "Food", "Music", "Games"]}
         image="event.jpg"
+        color="#e03398"
       />
       <CardReverse
         title="Merch!"
         list={["Posters", "Collectible Cards", "T-Shirts", "Bags"]}
         image="merch.jpg"
+        color="#31d885"
       />
       <Card
         title="Newsletter!"
@@ -85,11 +92,13 @@ const Index = () => {
           "Updates on the global Weeb Lore",
         ]}
         image="newsletter.jpg"
+        color="#ff5d5d"
       />
       <CardReverse
         title="Game Development!"
         list={["Original", "Tech Updates", "Production", "Fun!"]}
         image="gamedev.jpg"
+        color="#f5dd56"
       />
 
       {/*ABOUT US*/}
@@ -113,12 +122,18 @@ interface CardProps {
   title: string;
   list: string[];
   image: string;
+  color: string;
 }
 
-export const Card = ({ title, list, image }: CardProps) => {
+export const Card = ({ title, list, image, color }: CardProps) => {
   return (
     <div className="relative flex h-fit w-full flex-col gap-6 rounded-xl text-black">
-      <div className="flex flex-row justify-between rounded-xl bg-gradient-to-r from-yellow-400 to-transparent p-6">
+      <div
+        style={{
+          background: `linear-gradient(90deg, ${color} 0%, rgba(0,255,241,0) 100%)`,
+        }}
+        className={`flex flex-row justify-between rounded-xl p-6`}
+      >
         <div className="flex flex-col items-start gap-6">
           <p className="text-6xl">{title}</p>
           {list.map((x) => {
@@ -137,10 +152,15 @@ export const Card = ({ title, list, image }: CardProps) => {
   );
 };
 
-export const CardReverse = ({ title, list, image }: CardProps) => {
+export const CardReverse = ({ title, list, image, color }: CardProps) => {
   return (
     <div className="relative flex h-fit w-full flex-col gap-6 rounded-xl text-black">
-      <div className="flex flex-row justify-end rounded-xl bg-gradient-to-l from-yellow-400 to-transparent p-6">
+      <div
+        style={{
+          background: `linear-gradient(90deg, rgba(36,35,0,0) 0%, ${color} 100%)`,
+        }}
+        className={`flex flex-row justify-end rounded-xl p-6`}
+      >
         <Image
           className="-z-10 rounded-xl"
           objectFit="cover"

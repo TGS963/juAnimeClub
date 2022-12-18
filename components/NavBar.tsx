@@ -16,15 +16,15 @@ const NavBar = () => {
           </div>
         </Link>
         <Link href="/fanarts">
-          <div className="cursor-pointer rounded-2xl bg-slate-900 p-4 hover:bg-yellow-400 hover:text-black">
+          <div className="cursor-pointer rounded-2xl bg-slate-900 p-4 hover:bg-yellow-300 hover:text-black">
             Fan Arts
           </div>
         </Link>
       </div>
       <div className="search">
         <input
-          className="rounded-xl border-slate-500 bg-slate-800 p-2 text-slate-400 focus:border-2"
-          placeholder="search the site..."
+          className="text-md rounded-xl border-2 border-transparent bg-slate-800 p-2 text-slate-400 focus:border-slate-500"
+          placeholder="Search"
         />
       </div>
     </div>

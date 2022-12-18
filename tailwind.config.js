@@ -18,13 +18,23 @@ module.exports = {
     extend: {
       keyframes: {
         scale: {
-          "0%": { transform: "translateX(0%)", opacity: 0.5 },
-          "50%": { transform: "translateX(5rem)", opacity: 1 },
-          "100%": { transform: "translateX(10rem)", opacity: 0.5 },
+          "0%": {
+            transform: "translateX(0%)",
+            transform: "translateY(50%)",
+            transform: "rotate(-45deg)",
+
+            opacity: 0,
+          },
+          "50%": { opacity: 1 },
+          "100%": {
+            transform: "translateX(100%)",
+
+            opacity: 0,
+          },
         },
       },
       animation: {
-        "scale-in": "scale 1s ease-in infinite",
+        "scale-in": "scale 1s ease-in",
       },
     },
   },

@@ -16,7 +16,6 @@ const Index = () => {
     threshold: 0.1,
   });
 
-  const list = ["ass", "bruh"];
   return (
     <main className="flex h-full w-full flex-col items-center justify-center gap-10 px-14 text-center">
       <NavBar />
@@ -47,7 +46,7 @@ const Index = () => {
         <p className="p-6 text-4xl underline underline-offset-4">
           Our Seasonal Top 3
         </p>
-        <div className="flex h-fit flex-row gap-8">
+        <div className="flex h-fit flex-col gap-8 lg:flex-row">
           <AnimeCard
             aniName="Bocchi the Rock"
             aniDesc="9/10"

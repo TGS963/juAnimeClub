@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const Index = () => {
   const [seasonalTop, setSeasonalTop] = useState([
-    { id: 0, image: "", name: "", rating: "" },
+    { id: 0, image: "null", name: "", rating: "" },
   ]);
   const getSeasonalTop = async () => {
     const less = await fetch("/api/get-data", {
@@ -70,16 +70,20 @@ const Index = () => {
             Our Seasonal Top 3
           </p>
           <div className="flex h-fit flex-col gap-8 lg:flex-row">
-            {seasonalTop.map((x) => {
-              return (
-                <AnimeCard
-                  key={x.id}
-                  aniName={x.name}
-                  aniDesc={x.rating}
-                  aniImage={x.image}
-                />
-              );
-            })}
+            {seasonalTop[0].image !== "null" ? (
+              seasonalTop.map((x) => {
+                return (
+                  <AnimeCard
+                    key={x.id}
+                    aniName={x.name}
+                    aniDesc={x.rating}
+                    aniImage={x.image}
+                  />
+                );
+              })
+            ) : (
+              <p>Dead</p>
+            )}
           </div>
         </div>
         {/*WHAT WE DO*/}

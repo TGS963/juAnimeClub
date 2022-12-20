@@ -82,7 +82,11 @@ const Index = () => {
                 );
               })
             ) : (
-              <p>Dead</p>
+              <AnimeCard
+                aniName="Loading..."
+                aniDesc="Loading..."
+                aniImage="/black.jpg"
+              />
             )}
           </div>
         </div>

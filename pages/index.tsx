@@ -1,25 +1,26 @@
 import { useInView } from "react-intersection-observer";
+import { useEffect, useRef, useState } from "react";
 import AnimeCard from "@/components/AnimeCard";
 import TrendCard from "@/components/TrendCard";
 import { Transition } from "@headlessui/react";
 import BigCard from "@/components/BigCard";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
-import { useRef } from "react";
 
 const Index = () => {
-  const {
-    ref: navRef,
-    inView,
-    entry,
-  } = useInView({
-    threshold: 0.1,
-  });
-
+  const [seasonalTop, setSeasonalTop] = useState([
+    { id: 0, image: "", name: "", rating: "" },
+  ]);
+  const getSeasonalTop = async () => {
+    const less = await fetch("/api/get-data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    setSeasonalTop(await less.json());
+  };
   return (
-    <div>
+    <div onLoad={getSeasonalTop}>
       <NavBar />
-
       <main className="flex h-full w-full flex-col items-center justify-center gap-10 px-14 py-6 text-center">
         <BigCard />
         {/*TRENDING*/}
@@ -69,21 +70,16 @@ const Index = () => {
             Our Seasonal Top 3
           </p>
           <div className="flex h-fit flex-col gap-8 lg:flex-row">
-            <AnimeCard
-              aniName="Bocchi the Rock"
-              aniDesc="9/10"
-              aniImage="bocchi"
-            />
-            <AnimeCard
-              aniName="Chainsaw Man"
-              aniDesc="9/10"
-              aniImage="chainsawman"
-            />
-            <AnimeCard
-              aniName="Eminence in Shadow"
-              aniDesc="8.5/10"
-              aniImage="shadow"
-            />
+            {seasonalTop.map((x) => {
+              return (
+                <AnimeCard
+                  key={x.id}
+                  aniName={x.name}
+                  aniDesc={x.rating}
+                  aniImage={x.image}
+                />
+              );
+            })}
           </div>
         </div>
         {/*WHAT WE DO*/}

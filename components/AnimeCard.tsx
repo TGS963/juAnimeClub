@@ -17,7 +17,7 @@ const AnimeCard = ({ aniName, aniDesc, aniImage }: AniProps) => {
       <Image
         className="-z-10 rounded-xl group-hover:scale-110"
         objectFit="cover"
-        src={`/anime/${aniImage}/cover.jpg`}
+        src={aniImage}
         layout="fill"
         alt="bg"
       />

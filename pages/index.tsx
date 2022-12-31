@@ -6,62 +6,97 @@ import { Transition } from "@headlessui/react";
 import BigCard from "@/components/BigCard";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
+import Link from "next/link";
 
 const Index = () => {
   const [seasonalTop, setSeasonalTop] = useState([
     { id: 0, image: "null", name: "", rating: "" },
   ]);
+  const [trending, setTrending] = useState([
+    { id: 0, image: "null", title: "", source: "" },
+  ]);
+  const [bigcard, setBigCard] = useState([
+    {
+      id: 0,
+      image: "null",
+      title: "",
+      desc: "",
+      button: "",
+    },
+  ]);
   const getSeasonalTop = async () => {
-    const less = await fetch("/api/get-data", {
+    const less = await fetch("/api/get-seasontop", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });
     setSeasonalTop(await less.json());
   };
+  const getTrending = async () => {
+    const less = await fetch("/api/get-trending", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    setTrending(await less.json());
+  };
+  const getBigCard = async () => {
+    const less = await fetch("/api/get-bigcard", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    setBigCard(await less.json());
+  };
   return (
-    <div onLoad={getSeasonalTop}>
+    <div
+      onLoad={() => {
+        getSeasonalTop();
+        getTrending();
+        getBigCard();
+      }}
+    >
       <NavBar />
       <main className="flex h-full w-full flex-col items-center justify-center gap-10 px-14 py-6 text-center">
-        <BigCard />
+        {bigcard[0].image !== "null" ? (
+          bigcard.map((x) => {
+            return (
+              <BigCard
+                key={x.id}
+                cardTitle={x.title}
+                cardDesc={x.desc}
+                cardImage={x.image}
+                cardButton={x.button}
+              />
+            );
+          })
+        ) : (
+          <BigCard
+            cardTitle="Loading..."
+            cardDesc="Loading..."
+            cardImage="/black.jpg"
+            cardButton="Loading..."
+          />
+        )}
         {/*TRENDING*/}
         <div className="flex h-3/4 w-full flex-col gap-6">
           <p className="p-6 text-4xl underline underline-offset-4">Trending</p>
           <div className="flex h-96 max-h-fit shrink-0 flex-row flex-nowrap gap-8 overflow-x-auto">
-            <TrendCard
-              articleName="Keikenzumi na Kimi to, Keiken Zero na Ore ga, Otsukiaisuru Hanashi Christmas Key Visual revealed! "
-              articleDesc="Twitter: Anime Trending"
-              articleImage="one"
-            />
-            <TrendCard
-              articleName="'SPY x FAMILY' - Episode 24 Visual!"
-              articleDesc="Twitter: Anime Trending"
-              articleImage="two"
-            />
-            <TrendCard
-              articleName="Hokkaido Gals Are Super Adorable! - Anime Teaser Visual!"
-              articleDesc="Twitter: Anime Trending"
-              articleImage="three"
-            />
-            <TrendCard
-              articleName="Hokkaido Gals Are Super Adorable! - Anime Teaser Visual!"
-              articleDesc="Twitter: Anime Trending"
-              articleImage="three"
-            />
-            <TrendCard
-              articleName="Hokkaido Gals Are Super Adorable! - Anime Teaser Visual!"
-              articleDesc="Twitter: Anime Trending"
-              articleImage="three"
-            />
-            <TrendCard
-              articleName="Hokkaido Gals Are Super Adorable! - Anime Teaser Visual!"
-              articleDesc="Twitter: Anime Trending"
-              articleImage="three"
-            />
-            <TrendCard
-              articleName="Hokkaido Gals Are Super Adorable! - Anime Teaser Visual!"
-              articleDesc="Twitter: Anime Trending"
-              articleImage="three"
-            />
+            {trending[0].image !== "null" ? (
+              trending.map((x) => {
+                return (
+                  <TrendCard
+                    key={x.id}
+                    articleName={x.title}
+                    articleSource={x.source}
+                    articleImage={x.image}
+                  />
+                );
+              })
+            ) : (
+              <TrendCard
+                articleName="Loading..."
+                articleSource="Loading..."
+                articleImage="/black.jpg"
+              />
+            )}
           </div>
         </div>
         {/*RECOMMENDATIONS FOR THE SEASON*/}
@@ -92,36 +127,43 @@ const Index = () => {
         </div>
         {/*WHAT WE DO*/}
         <p className="p-6 text-4xl underline underline-offset-4">What we do</p>
-        <Card
-          title="Events!"
-          list={["Cosplay", "Food", "Music", "Games"]}
-          image="event.jpg"
-          color="#e03398"
-        />
-        <CardReverse
-          title="Merch!"
-          list={["Posters", "Collectible Cards", "T-Shirts", "Bags"]}
-          image="merch.jpg"
-          color="#31d885"
-        />
-        <Card
-          title="Newsletter!"
-          list={[
-            "Anime Reviews",
-            "Original Fanarts",
-            "Insightful Articles",
-            "Updates on the global Weeb Lore",
-          ]}
-          image="newsletter.jpg"
-          color="#ff5d5d"
-        />
-        <CardReverse
-          title="Game Development!"
-          list={["Original", "Tech Updates", "Production", "Fun!"]}
-          image="gamedev.jpg"
-          color="#f5dd56"
-        />
-
+        <Link href="/events">
+          <Card
+            title="Events!"
+            list={["Cosplay", "Food", "Music", "Games"]}
+            image="event.jpg"
+            color="#e03398"
+          />
+        </Link>
+        <Link href="/merch">
+          <CardReverse
+            title="Merch!"
+            list={["Posters", "Collectible Cards", "T-Shirts", "Bags"]}
+            image="merch.jpg"
+            color="#31d885"
+          />
+        </Link>
+        <Link href="/newsletter">
+          <Card
+            title="Newsletter!"
+            list={[
+              "Anime Reviews",
+              "Original Fanarts",
+              "Insightful Articles",
+              "Updates on the global Weeb Lore",
+            ]}
+            image="newsletter.jpg"
+            color="#ff5d5d"
+          />
+        </Link>
+        <Link href="/gamedev">
+          <CardReverse
+            title="Game Development!"
+            list={["Original", "Tech Updates", "Production", "Fun!"]}
+            image="gamedev.jpg"
+            color="#f5dd56"
+          />
+        </Link>
         {/*ABOUT US*/}
         <div className="flex flex-col gap-6 py-12">
           <p className="text-4xl">About Us</p>

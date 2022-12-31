@@ -14,3 +14,16 @@ model SeasonalTop {
 	name String?
 	rating String
 }
+model Trending {
+	id	Int @id @default(autoincrement())
+	image	String @unique
+	title String
+	source String?
+}
+model BigCard {
+	id	Int @id @default(autoincrement())
+	image	String @unique
+	title String?
+	desc String?
+	button String?
+}

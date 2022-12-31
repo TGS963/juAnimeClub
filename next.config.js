@@ -11,6 +11,10 @@ const nextConfig = {
         hostname: '**.alphacoders.com',
         pathname: "/*/**"
       },
+      {
+        protocol:'https',
+        hostname: 'pbs.twimg.com',
+      }
     ],
   }
 }

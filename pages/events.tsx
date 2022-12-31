@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Events = () => {
-  return <div>Events</div>;
+  return <div>Coming Soon!</div>;
 };
 
 export default Events;

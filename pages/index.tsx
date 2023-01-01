@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const Index = () => {
   const [seasonalTop, setSeasonalTop] = useState([
-    { id: 0, image: "null", name: "", rating: "" },
+    { id: 0, image: "null", name: "", rating: "", mal: "" },
   ]);
   const [trending, setTrending] = useState([
     { id: 0, image: "null", title: "", source: "" },
@@ -113,6 +113,7 @@ const Index = () => {
                     aniName={x.name}
                     aniDesc={x.rating}
                     aniImage={x.image}
+                    aniMal={x.mal}
                   />
                 );
               })
@@ -121,49 +122,51 @@ const Index = () => {
                 aniName="Loading..."
                 aniDesc="Loading..."
                 aniImage="/black.jpg"
+                aniMal="www.google.com"
               />
             )}
           </div>
         </div>
         {/*WHAT WE DO*/}
         <p className="p-6 text-4xl underline underline-offset-4">What we do</p>
-        <Link href="/events">
-          <Card
-            title="Events!"
-            list={["Cosplay", "Food", "Music", "Games"]}
-            image="event.jpg"
-            color="#e03398"
-          />
-        </Link>
-        <Link href="/merch">
-          <CardReverse
-            title="Merch!"
-            list={["Posters", "Collectible Cards", "T-Shirts", "Bags"]}
-            image="merch.jpg"
-            color="#31d885"
-          />
-        </Link>
-        <Link href="/newsletter">
-          <Card
-            title="Newsletter!"
-            list={[
-              "Anime Reviews",
-              "Original Fanarts",
-              "Insightful Articles",
-              "Updates on the global Weeb Lore",
-            ]}
-            image="newsletter.jpg"
-            color="#ff5d5d"
-          />
-        </Link>
-        <Link href="/gamedev">
-          <CardReverse
-            title="Game Development!"
-            list={["Original", "Tech Updates", "Production", "Fun!"]}
-            image="gamedev.jpg"
-            color="#f5dd56"
-          />
-        </Link>
+
+        <Card
+          title="Events!"
+          list={["Cosplay", "Food", "Music", "Games"]}
+          image="event.jpg"
+          color="#e03398"
+          link="/events"
+        />
+
+        <CardReverse
+          title="Merch!"
+          list={["Posters", "Collectible Cards", "T-Shirts", "Bags"]}
+          image="merch.jpg"
+          color="#31d885"
+          link="merch"
+        />
+
+        <Card
+          title="Newsletter!"
+          list={[
+            "Anime Reviews",
+            "Original Fanarts",
+            "Insightful Articles",
+            "Updates on the global Weeb Lore",
+          ]}
+          image="newsletter.jpg"
+          color="#ff5d5d"
+          link="newsletter"
+        />
+
+        <CardReverse
+          title="Game Development!"
+          list={["Original", "Tech Updates", "Production", "Fun!"]}
+          image="gamedev.jpg"
+          color="#f5dd56"
+          link="gamedev"
+        />
+
         {/*ABOUT US*/}
         <div className="flex flex-col gap-6 py-12">
           <p className="text-4xl">About Us</p>
@@ -188,67 +191,72 @@ interface CardProps {
   list: string[];
   image: string;
   color: string;
+  link: string;
 }
 
-export const Card = ({ title, list, image, color }: CardProps) => {
+export const Card = ({ title, list, image, color, link }: CardProps) => {
   return (
-    <div className="relative flex h-fit w-full flex-col gap-6 rounded-xl text-black">
-      <div
-        style={{
-          background: `linear-gradient(90deg, ${color} 0%, rgba(0,255,241,0) 100%)`,
-        }}
-        className={`flex flex-row justify-between rounded-xl p-6`}
-      >
-        <div className="flex flex-col items-start gap-6">
-          <p className="text-6xl">{title}</p>
-          {list.map((x) => {
-            return (
-              <p className="text-xl" key={x}>
-                - {x}
-              </p>
-            );
-          })}
+    <Link href={link}>
+      <div className="group relative flex h-fit w-full cursor-pointer flex-col gap-6 rounded-xl text-black">
+        <div
+          style={{
+            background: `linear-gradient(90deg, ${color} 0%, rgba(0,255,241,0) 100%)`,
+          }}
+          className={`flex flex-row justify-between rounded-xl p-6`}
+        >
+          <div className="flex flex-col items-start gap-6">
+            <p className="text-6xl">{title}</p>
+            {list.map((x) => {
+              return (
+                <p className="text-xl" key={x}>
+                  - {x}
+                </p>
+              );
+            })}
+          </div>
+          <Image
+            className="-z-10 rounded-xl group-hover:scale-105"
+            objectFit="cover"
+            src={`/${image}`}
+            layout="fill"
+            alt="bg"
+          />
         </div>
-        <Image
-          className="-z-10 rounded-xl"
-          objectFit="cover"
-          src={`/${image}`}
-          layout="fill"
-          alt="bg"
-        />
       </div>
-    </div>
+    </Link>
   );
 };
 
-export const CardReverse = ({ title, list, image, color }: CardProps) => {
+export const CardReverse = ({ title, list, image, color, link }: CardProps) => {
   return (
-    <div className="relative flex h-fit w-full flex-col gap-6 rounded-xl text-black">
-      <div
-        style={{
-          background: `linear-gradient(90deg, rgba(36,35,0,0) 0%, ${color} 100%)`,
-        }}
-        className={`flex flex-row justify-end rounded-xl p-6`}
-      >
-        <Image
-          className="-z-10 rounded-xl"
-          objectFit="cover"
-          src={`/${image}`}
-          layout="fill"
-          alt="bg"
-        />
-        <div className="flex flex-col items-end gap-6">
-          <p className="text-6xl">{title}</p>
-          {list.map((x) => {
-            return (
-              <p className="text-xl" key={x}>
-                {x} -
-              </p>
-            );
-          })}
+    <Link href={link}>
+      <div className="group relative flex h-fit w-full cursor-pointer flex-col gap-6 rounded-xl text-black">
+        <div
+          style={{
+            background: `linear-gradient(90deg, rgba(36,35,0,0) 0%, ${color} 100%)`,
+          }}
+          className={`flex flex-row justify-end rounded-xl p-6`}
+        >
+          <Image
+            className="-z-10 rounded-xl group-hover:scale-105"
+            objectFit="cover"
+            src={`/${image}`}
+            layout="fill"
+            alt="bg"
+          />
+          <div className="flex flex-col items-end gap-6">
+            <p className="text-6xl">{title}</p>
+            {list.map((x) => {
+              return (
+                <p className="text-xl" key={x}>
+                  {x} -
+                </p>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

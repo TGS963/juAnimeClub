@@ -13,6 +13,7 @@ model SeasonalTop {
 	image	String @unique
 	name String?
 	rating String
+	mal String
 }
 model Trending {
 	id	Int @id @default(autoincrement())

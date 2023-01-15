@@ -27,7 +27,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
             />
             <div className="flex h-56 w-full flex-row items-end justify-between rounded-xl bg-gradient-to-t from-black to-transparent p-6">
               <p className="text-2xl">{aniName}</p>
-              <p className="max-w-1/2 text-start text-lg">{aniDesc}</p>
+              <p className="max-w-1/2 text-start text-lg">place</p>
             </div>
           </div>
         );

@@ -9,11 +9,7 @@ const Gallery = () => {
   return (
     <div>
       {Object.keys(images).map((x) => {
-        return (
-          <div key={x}>
-            <GalleryAnime />
-          </div>
-        );
+        return <div key={x}></div>;
       })}
     </div>
   );

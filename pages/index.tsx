@@ -25,34 +25,28 @@ const Index = () => {
     },
   ]);
   const getSeasonalTop = async () => {
-    const less = await fetch("/api/get-seasontop", {
+    const stop = await fetch("/api/get-seasontop", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });
-    setSeasonalTop(await less.json());
+    setSeasonalTop(await stop.json());
   };
   const getTrending = async () => {
-    const less = await fetch("/api/get-trending", {
+    const trend = await fetch("/api/get-trending", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });
-    setTrending(await less.json());
+    setTrending(await trend.json());
   };
   const getBigCard = async () => {
-    const less = await fetch("/api/get-bigcard", {
+    const bgc = await fetch("/api/get-bigcard", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });
-    setBigCard(await less.json());
+    setBigCard(await bgc.json());
   };
   return (
-    <div
-      onLoad={() => {
-        getSeasonalTop();
-        getTrending();
-        getBigCard();
-      }}
-    >
+    <div onLoad={() => {}}>
       <NavBar />
       <main className="flex h-full w-full flex-col items-center justify-center gap-10 px-14 py-6 text-center">
         {bigcard[0].image !== "null" ? (

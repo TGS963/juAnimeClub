@@ -45,8 +45,13 @@ const Index = () => {
     });
     setBigCard(await bgc.json());
   };
+  useEffect(() => {
+    getBigCard();
+    getSeasonalTop();
+    getTrending();
+  }, []);
   return (
-    <div onLoad={() => {}}>
+    <div>
       <NavBar />
       <main className="flex h-full w-full flex-col items-center justify-center gap-10 px-14 py-6 text-center">
         {bigcard[0].image !== "null" ? (

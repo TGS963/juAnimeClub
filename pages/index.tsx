@@ -47,7 +47,7 @@ const Index = () => {
     //setBigCard(await bgc.json());
   };
   useEffect(() => {
-    //getBigCard();
+    getBigCard();
     getSeasonalTop();
     getTrending();
   }, []);

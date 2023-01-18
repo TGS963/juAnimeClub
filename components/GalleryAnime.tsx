@@ -20,7 +20,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
       <div className="fixed top-0 right-0 h-full w-44 bg-white text-black">
         <p>Cart</p>
         {cartItems.map((x) => {
-          return <p>{x}</p>;
+          return <p key={x.length}>{x}</p>;
         })}
         <button
           className="btn bg-red-300"

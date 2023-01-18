@@ -48,7 +48,7 @@ const Index = () => {
   useEffect(() => {
     //getBigCard();
     getSeasonalTop();
-    //getTrending();
+    getTrending();
   }, []);
   return (
     <div>

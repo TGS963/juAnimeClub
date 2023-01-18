@@ -3,28 +3,44 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
 model SeasonalTop {
-	id	Int @id @default(autoincrement())
-	image	String @unique
-	name String?
-	rating String
-	mal String
+  id     Int     @id @default(autoincrement())
+  image  String  @unique
+  name   String?
+  rating String
+  mal    String
 }
+
 model Trending {
-	id	Int @id @default(autoincrement())
-	image	String @unique
-	title String
-	source String?
+  id     Int     @id @default(autoincrement())
+  image  String  @unique
+  title  String
+  source String?
 }
+
 model BigCard {
-	id	Int @id @default(autoincrement())
-	image	String @unique
-	title String?
-	desc String?
-	button String?
+  id     Int     @id @default(autoincrement())
+  image  String  @unique
+  title  String?
+  desc   String?
+  button String?
+}
+
+model ImageGallery {
+  id              Int            @id @default(autoincrement())
+  code            String
+  image           String         @unique
+  MockupGallery   MockupGallery? @relation(fields: [mockupGalleryId], references: [id])
+  mockupGalleryId Int?
+}
+
+model MockupGallery {
+  id      Int            @id @default(autoincrement())
+  name    String         @unique
+  gallery ImageGallery[]
 }

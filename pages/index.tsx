@@ -10,15 +10,15 @@ import Link from "next/link";
 
 const Index = () => {
   const [seasonalTop, setSeasonalTop] = useState([
-    { id: 0, image: "null", name: "", rating: "", mal: "" },
+    { id: 0, image: "/black.jpg", name: "", rating: "", mal: "" },
   ]);
   const [trending, setTrending] = useState([
-    { id: 0, image: "null", title: "", source: "" },
+    { id: 0, image: "/black.jpg", title: "", source: "" },
   ]);
   const [bigcard, setBigCard] = useState([
     {
       id: 0,
-      image: "null",
+      image: "/black.jpg",
       title: "",
       desc: "",
       button: "",
@@ -46,15 +46,15 @@ const Index = () => {
     setBigCard(await bgc.json());
   };
   useEffect(() => {
-    getBigCard();
+    //getBigCard();
     getSeasonalTop();
-    getTrending();
+    //getTrending();
   }, []);
   return (
     <div>
       <NavBar />
       <main className="flex h-full w-full flex-col items-center justify-center gap-10 px-14 py-6 text-center">
-        {bigcard[0].image !== "null" ? (
+        {bigcard !== undefined ? (
           bigcard.map((x) => {
             return (
               <BigCard

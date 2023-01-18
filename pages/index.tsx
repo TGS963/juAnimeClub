@@ -43,8 +43,8 @@ const Index = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });
-    console.log(bgc.json());
-    //setBigCard(await bgc.json());
+    //console.log(bgc.json());
+    setBigCard(await bgc.json());
   };
   useEffect(() => {
     getBigCard();

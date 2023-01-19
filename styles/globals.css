@@ -11,6 +11,7 @@
   body {
     @apply bg-gray-900 font-sans text-lg text-slate-50;
     font-family: "Alata", system-ui, sans-serif;
+    overflow-y: scroll !important;
   }
   path {
     @apply transition-none;
@@ -27,24 +28,12 @@
   .animate {
     @apply transition-all duration-300 ease-in-out;
   }
-  .no-scrollbar::-webkit-scrollbar {
-    width: 7px;
-  }
-  .no-scrollbar::-webkit-scrollbar-thumb {
-    background: rgb(255, 255, 255, 0.5);
-    border-radius: 25px;
-  }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
   .no-animate {
     @apply transition-none;
   }
 
   .btn {
-    @apply flex h-16 animate-scale-in items-center justify-center gap-5 rounded-full border-none px-4 text-lg font-normal normal-case;
+    @apply flex h-16 items-center justify-center gap-5 rounded-full border-none px-4 text-lg font-normal normal-case;
   }
   .btn-primary {
     @apply animate-scale-in bg-indigo-500 text-indigo-50 outline-none hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-700;

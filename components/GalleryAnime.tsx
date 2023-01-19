@@ -58,7 +58,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   Modal.defaultStyles.overlay!.backgroundColor = "black";
   return (
     <>
-      <div className="fixed top-0 right-0 flex h-full w-44 flex-col justify-center gap-5 bg-[#131313] p-5 text-yellow-400">
+      <div className="fixed top-0 -right-36 flex h-full w-44 flex-col justify-center gap-5 bg-[#131313] p-5 text-yellow-400 hover:right-0 md:right-0">
         <p>Cart:</p>
         {cartItems.map((item) => (
           <p key={null}>{item}</p>
@@ -80,7 +80,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
       <div className="m-5 mr-44 flex flex-col flex-wrap justify-start gap-12 md:flex-row">
         {numbers.map((x) => {
           return (
-            <div className="flex basis-1/3 flex-col" key={x.id}>
+            <div className="flex flex-col md:basis-1/3" key={x.id}>
               <div
                 className={`group relative flex h-full w-full cursor-pointer flex-row overflow-hidden rounded-xl border-4 border-transparent duration-100 hover:border-cyan-200`}
                 onClick={() => {

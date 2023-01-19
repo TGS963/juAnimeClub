@@ -14,7 +14,7 @@ const Gallery = () => {
   };
   return (
     <>
-      <div className="sticky inset-0 z-40 flex w-full flex-row items-center justify-evenly bg-black/50 py-5 text-center text-yellow-400 backdrop-blur-lg">
+      <div className="sticky inset-0 z-10 mr-44 flex w-full flex-col items-start justify-evenly break-all bg-black/50 p-2 py-5 text-center text-yellow-400 backdrop-blur-lg md:flex-row md:items-center md:p-0">
         <p>Gloss(G): ₹99</p>
         <p>Matte(M): ₹99</p>
         <p>WaterProof Matte(W): ₹169</p>

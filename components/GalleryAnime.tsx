@@ -61,7 +61,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
       <div className="fixed top-0 right-0 z-50 flex h-full w-44 flex-col gap-5 bg-[#131313] p-5 text-yellow-400">
         <p>Cart:</p>
         {cartItems.map((item) => (
-          <p>{item}</p>
+          <p key={null}>{item}</p>
         ))}
         <button
           className="btn bg-green-400 text-black"
@@ -80,9 +80,8 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
       <div className="m-5 mr-44 flex flex-col flex-wrap justify-start gap-12 md:flex-row">
         {numbers.map((x) => {
           return (
-            <div className="flex basis-1/3 flex-col">
+            <div className="flex basis-1/3 flex-col" key={x.id}>
               <div
-                key={x.id}
                 className={`group relative flex h-full w-full cursor-pointer flex-row overflow-hidden rounded-xl border-4 border-transparent duration-100 hover:border-cyan-200`}
                 onClick={() => {
                   toast.custom("Press Esc, or click to exit", {

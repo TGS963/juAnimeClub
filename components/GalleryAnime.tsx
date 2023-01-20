@@ -89,7 +89,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
         {cartItems.map((item) => (
           <p
             key={null}
-            className="cursor-pointer select-none text-white"
+            className="cursor-pointer select-none text-sm text-white"
             onClick={() => {
               removeFromCart(
                 item.substring(0, item.indexOf("-", item.indexOf("-") + 1)),
@@ -104,7 +104,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
               });
             }}
           >
-            {item}
+            {item} <span className="text-red-500">-</span>
           </p>
         ))}
         <button
@@ -163,10 +163,10 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                   <p className="text-2xl">{x.code}</p>
                 </div>
               </div>
-              <div className="mr-4 flex w-full flex-row flex-wrap justify-between gap-5 rounded-b-xl border-b-2 border-b-yellow-500 bg-gradient-to-b from-black to-slate-500 p-5">
-                <div className="shadow-md shadow-black">
+              <div className="mr-4 flex w-full flex-row flex-wrap justify-between rounded-b-xl">
+                <div className="h-full w-1/3">
                   <button
-                    className="btn h-fit w-full rounded-md bg-blue-400 py-1 text-start text-lg text-black"
+                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-r-none bg-blue-400 py-1 text-start text-lg text-black"
                     onClick={() => {
                       addToCart(x.code + "-W", posterTypes.W);
                     }}
@@ -174,9 +174,9 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                     W
                   </button>
                 </div>
-                <div className="shadow-md shadow-black">
+                <div className="h-full w-1/3">
                   <button
-                    className="btn h-fit w-full rounded-md bg-slate-400 py-1 text-start text-lg text-black"
+                    className="btn h-full w-full min-w-fit rounded-md rounded-l-none rounded-r-none rounded-t-none bg-slate-400 py-1 text-start text-lg text-black"
                     onClick={() => {
                       addToCart(x.code + "-M", posterTypes.M);
                     }}
@@ -184,9 +184,9 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                     M
                   </button>
                 </div>
-                <div className="shadow-md shadow-black">
+                <div className="h-full w-1/3">
                   <button
-                    className="btn h-fit w-full rounded-md bg-yellow-500 py-1 text-start text-lg text-black"
+                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-l-none  bg-yellow-500 py-1 text-start text-lg text-black"
                     onClick={() => {
                       addToCart(x.code + "-G", posterTypes.G);
                     }}

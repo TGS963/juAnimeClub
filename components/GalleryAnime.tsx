@@ -58,7 +58,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   Modal.defaultStyles.overlay!.backgroundColor = "black";
   return (
     <>
-      <div className="fixed top-0 -right-36 flex h-full w-44 flex-col justify-center gap-5 bg-[#131313] p-5 text-yellow-400 hover:right-0 md:right-0">
+      <div className="fixed top-0 -right-36 flex h-full w-44 animate-scale-in flex-col justify-center gap-5 border-l-2 border-emerald-500 bg-[#131313] p-5 text-yellow-400 delay-1000 hover:right-0 md:right-0">
         <p>Cart:</p>
         {cartItems.map((item) => (
           <p key={null}>{item}</p>
@@ -114,60 +114,59 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                   <p className="text-2xl">{x.code}</p>
                 </div>
               </div>
-              <div className=" mx-5 flex flex-row justify-between gap-5">
-                <div>
+              <div className="mr-4 flex w-full flex-row justify-between gap-5 rounded-b-xl border-b-2 border-b-yellow-500 bg-gradient-to-b from-black to-slate-500 p-5">
+                <div className="shadow-md shadow-black">
                   <button
-                    className="btn max-w-1/2 h-fit  rounded-md rounded-b-none bg-green-400 py-1 text-start text-sm"
+                    className="btn h-fit w-full rounded-md rounded-b-none bg-blue-400 py-1 text-start text-sm text-black"
                     onClick={() => {
                       addToCart(x.code + "-W", waterproof);
                     }}
                   >
-                    W+
+                    W
                   </button>
                   <button
-                    className="btn max-w-1/2  h-fit rounded-md rounded-t-none bg-red-400 py-1 text-start text-sm"
+                    className="btn h-fit w-full rounded-md rounded-t-none bg-red-400 text-start text-sm text-black"
                     onClick={() => {
                       removeFromCart(x.code + "-W", waterproof);
                     }}
                   >
-                    W-
+                    remove
                   </button>
-                </div>{" "}
-                <br></br>
-                <div>
+                </div>
+                <div className="shadow-md shadow-black">
                   <button
-                    className="btn max-w-1/2 h-fit rounded-md rounded-b-none bg-green-400 py-1 text-start text-sm"
+                    className="btn h-fit w-full rounded-md rounded-b-none bg-slate-400 py-1 text-start text-sm text-black"
                     onClick={() => {
                       addToCart(x.code + "-M", matte);
                     }}
                   >
-                    M+
+                    M
                   </button>
                   <button
-                    className="btn max-w-1/2 h-fit rounded-md rounded-t-none bg-red-400 py-1 text-start text-sm"
+                    className="btn h-fit w-full rounded-md rounded-t-none bg-red-400 text-start text-sm text-black"
                     onClick={() => {
                       removeFromCart(x.code + "-M", matte);
                     }}
                   >
-                    M-
+                    remove
                   </button>
                 </div>
-                <div>
+                <div className="shadow-md shadow-black">
                   <button
-                    className="btn max-w-1/2  h-fit rounded-md rounded-b-none bg-green-400 py-1 text-start text-sm"
+                    className="btn h-fit w-full rounded-md rounded-b-none bg-yellow-500 py-1 text-start text-sm text-black"
                     onClick={() => {
                       addToCart(x.code + "-G", gloss);
                     }}
                   >
-                    G+
+                    G
                   </button>
                   <button
-                    className="btn max-w-1/2 h-fit  rounded-md rounded-t-none bg-red-400 py-1 text-start text-sm"
+                    className="btn h-fit w-full rounded-md rounded-t-none bg-red-400 text-start text-sm text-black"
                     onClick={() => {
                       removeFromCart(x.code + "-G", gloss);
                     }}
                   >
-                    G-
+                    remove
                   </button>
                 </div>
               </div>

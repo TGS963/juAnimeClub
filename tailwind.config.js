@@ -20,21 +20,20 @@ module.exports = {
         scale: {
           "0%": {
             transform: "translateX(0%)",
-            transform: "translateY(50%)",
-            transform: "rotate(-45deg)",
-
-            opacity: 0,
           },
-          "50%": { opacity: 1 },
+          "40%": {
+            transform: "translateX(-100%)",
+          },
+          "60%": {
+            transform: "translateX(-100%)",
+          },
           "100%": {
-            transform: "translateX(100%)",
-
-            opacity: 0,
+            transform: "translateX(0%)",
           },
         },
       },
       animation: {
-        "scale-in": "scale 1s ease-in",
+        "scale-in": "scale 2s ease-in-out",
       },
     },
   },

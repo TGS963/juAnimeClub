@@ -14,10 +14,16 @@ const Gallery = () => {
   };
   return (
     <>
-      <div className="sticky inset-0 z-10 mr-44 flex w-full flex-col items-start justify-evenly break-all bg-black/50 p-2 py-5 text-center text-yellow-400 backdrop-blur-lg md:flex-row md:items-center md:p-0">
-        <p>Gloss(G): ₹99</p>
-        <p>Matte(M): ₹99</p>
-        <p>WaterProof Matte(W): ₹169</p>
+      <div className="sticky inset-0 z-10 mr-44 flex w-full flex-col items-start justify-evenly break-words bg-black/50 p-2 py-5 text-yellow-400 backdrop-blur-lg md:flex-row md:items-center md:p-0 md:text-center">
+        <p>
+          Gloss(G): <span className="text-emerald-500">₹99</span>
+        </p>
+        <p>
+          Matte(M): <span className="text-emerald-500">₹99</span>
+        </p>
+        <p>
+          WaterProof Matte(W): <span className="text-emerald-500">₹169</span>
+        </p>
       </div>
       <div onLoad={getImages} className="m-5 flex flex-col justify-center">
         {posterJSON.map((x) => {

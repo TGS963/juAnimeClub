@@ -19,9 +19,20 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   const matte = 99;
   const gloss = 99;
   const waterproof = 169;
+  interface posterTypesInterface {
+    M: number;
+    G: number;
+    W: number;
+  }
+  const posterTypes: posterTypesInterface = {
+    M: 99,
+    G: 99,
+    W: 169,
+  };
   const [cartItems, setCartItems] = useRecoilState(cart);
   const [price, setPrice] = useRecoilState(cartPrice);
   const [showInfo, setShowInfo] = useState(false);
+  const [cartShow, setCartShow] = useState(false);
   const addToCart = (posterCode: string, posterType: number) => {
     if (cartItems.some((item) => item.includes(posterCode))) {
       let tmp = Array.from(cartItems);
@@ -34,6 +45,9 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
       setCartItems(tmp);
     } else setCartItems([...cartItems, posterCode + "-1"]);
     setPrice((prevPrice) => prevPrice + posterType);
+    toast.success("Added to Cart", {
+      duration: 1000,
+    });
   };
   const removeFromCart = (posterCode: string, posterType: number) => {
     let tmp = Array.from(cartItems);
@@ -58,10 +72,40 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   Modal.defaultStyles.overlay!.backgroundColor = "black";
   return (
     <>
-      <div className="fixed top-0 -right-36 flex h-full w-44 animate-scale-in flex-col justify-center gap-5 border-l-2 border-emerald-500 bg-[#131313] p-5 text-yellow-400 hover:right-0 md:right-0 md:animate-none">
+      <div
+        className={`fixed top-0 flex h-full w-44 animate-scale-in flex-col justify-center gap-5 border-l-2 border-emerald-500 bg-[#131313] p-5 text-yellow-400 ${
+          cartShow ? "right-0" : "-right-44"
+        } md:right-0 md:animate-none`}
+      >
+        <div
+          className="group absolute -left-4 flex h-36 w-4 cursor-pointer items-center justify-center rounded-l-xl bg-emerald-500 xs:-left-8 xs:h-44 xs:w-8 md:hidden"
+          onClick={() => setCartShow((prev) => !prev)}
+        >
+          <p className="-rotate-90 pb-1 text-sm text-black xs:pb-2 xs:text-lg">
+            Cart
+          </p>
+        </div>
         <p>Cart:</p>
         {cartItems.map((item) => (
-          <p key={null}>{item}</p>
+          <p
+            key={null}
+            className="cursor-pointer select-none text-white"
+            onClick={() => {
+              removeFromCart(
+                item.substring(0, item.indexOf("-", item.indexOf("-") + 1)),
+                posterTypes[
+                  item[
+                    item.indexOf("-", item.indexOf("-") + 1) + 1
+                  ] as keyof posterTypesInterface
+                ]
+              );
+              toast.error("Removed item from cart", {
+                duration: 1000,
+              });
+            }}
+          >
+            {item}
+          </p>
         ))}
         <button
           className="btn bg-green-400 text-black"
@@ -76,11 +120,11 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
           Confirm: ₹{price}
         </button>
       </div>
-      <p className="m-5 text-2xl underline">{aniName}</p>
-      <div className="m-5 mr-44 flex flex-col flex-wrap justify-start gap-12 md:flex-row">
+      <p className="my-5 text-2xl underline">{aniName}</p>
+      <div className="mr-44 flex w-full flex-col flex-wrap justify-start gap-12 md:flex-row">
         {numbers.map((x) => {
           return (
-            <div className="flex flex-col md:basis-1/3" key={x.id}>
+            <div className="flex w-full flex-col md:basis-1/3" key={x.id}>
               <div
                 className={`group relative flex h-full w-full cursor-pointer flex-row overflow-hidden rounded-xl border-4 border-transparent duration-100 hover:border-cyan-200`}
                 onClick={() => {
@@ -98,7 +142,12 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                   shouldCloseOnOverlayClick={true}
                 >
                   <div className=" fixed inset-10 bg-black" onClick={onClose}>
-                    <Image src={x.image} layout="fill" objectFit="scale-down" />
+                    <Image
+                      src={x.image}
+                      layout="fill"
+                      objectFit="scale-down"
+                      alt="poster"
+                    />
                   </div>
                 </Modal>
 
@@ -114,59 +163,35 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                   <p className="text-2xl">{x.code}</p>
                 </div>
               </div>
-              <div className="mr-4 flex w-full flex-row justify-between gap-5 rounded-b-xl border-b-2 border-b-yellow-500 bg-gradient-to-b from-black to-slate-500 p-5">
+              <div className="mr-4 flex w-full flex-row flex-wrap justify-between gap-5 rounded-b-xl border-b-2 border-b-yellow-500 bg-gradient-to-b from-black to-slate-500 p-5">
                 <div className="shadow-md shadow-black">
                   <button
-                    className="btn h-fit w-full rounded-md rounded-b-none bg-blue-400 py-1 text-start text-sm text-black"
+                    className="btn h-fit w-full rounded-md bg-blue-400 py-1 text-start text-lg text-black"
                     onClick={() => {
-                      addToCart(x.code + "-W", waterproof);
+                      addToCart(x.code + "-W", posterTypes.W);
                     }}
                   >
                     W
                   </button>
-                  <button
-                    className="btn h-fit w-full rounded-md rounded-t-none bg-red-400 text-start text-sm text-black"
-                    onClick={() => {
-                      removeFromCart(x.code + "-W", waterproof);
-                    }}
-                  >
-                    remove
-                  </button>
                 </div>
                 <div className="shadow-md shadow-black">
                   <button
-                    className="btn h-fit w-full rounded-md rounded-b-none bg-slate-400 py-1 text-start text-sm text-black"
+                    className="btn h-fit w-full rounded-md bg-slate-400 py-1 text-start text-lg text-black"
                     onClick={() => {
-                      addToCart(x.code + "-M", matte);
+                      addToCart(x.code + "-M", posterTypes.M);
                     }}
                   >
                     M
                   </button>
-                  <button
-                    className="btn h-fit w-full rounded-md rounded-t-none bg-red-400 text-start text-sm text-black"
-                    onClick={() => {
-                      removeFromCart(x.code + "-M", matte);
-                    }}
-                  >
-                    remove
-                  </button>
                 </div>
                 <div className="shadow-md shadow-black">
                   <button
-                    className="btn h-fit w-full rounded-md rounded-b-none bg-yellow-500 py-1 text-start text-sm text-black"
+                    className="btn h-fit w-full rounded-md bg-yellow-500 py-1 text-start text-lg text-black"
                     onClick={() => {
-                      addToCart(x.code + "-G", gloss);
+                      addToCart(x.code + "-G", posterTypes.G);
                     }}
                   >
                     G
-                  </button>
-                  <button
-                    className="btn h-fit w-full rounded-md rounded-t-none bg-red-400 text-start text-sm text-black"
-                    onClick={() => {
-                      removeFromCart(x.code + "-G", gloss);
-                    }}
-                  >
-                    remove
                   </button>
                 </div>
               </div>

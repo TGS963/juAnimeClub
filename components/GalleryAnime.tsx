@@ -64,6 +64,12 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
     setCartItems(tmp);
     setPrice((prevPrice) => prevPrice - posterType);
   };
+  function getNo(posterCode: string) {
+    let tmp = Array.from(cartItems);
+    let tmpCodeIndex = tmp.findIndex((code) => code.includes(posterCode));
+    if (tmp[tmpCodeIndex] === undefined) return null;
+    return tmp[tmpCodeIndex]!.match(/\d+/)![0];
+  }
   const onClose = (e: any) => {
     e.preventDefault();
     console.log("hiding modal");
@@ -108,7 +114,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
           </p>
         ))}
         <button
-          className="btn bg-green-400 text-black"
+          className="btn rounded-xl bg-green-400 text-black"
           onClick={() => {
             navigator.clipboard.writeText(cartItems.join());
             toast.success(
@@ -118,6 +124,15 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
           }}
         >
           Confirm: ₹{price}
+        </button>
+        <button
+          className="btn rounded-xl bg-slate-400 text-black"
+          onClick={() => {
+            setCartItems([]);
+            setPrice(0);
+          }}
+        >
+          Reset
         </button>
       </div>
       <p className="my-5 text-2xl underline">{aniName}</p>
@@ -163,35 +178,44 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                   <p className="text-2xl">{x.code}</p>
                 </div>
               </div>
-              <div className="mr-4 flex w-full flex-row flex-wrap justify-between rounded-b-xl">
+              <div className="mr-4 flex w-full flex-row flex-wrap justify-between rounded-b-xl text-xs sm:text-lg">
                 <div className="h-full w-1/3">
                   <button
-                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-r-none bg-blue-400 py-1 text-start text-lg text-black"
+                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-r-none bg-blue-400 py-1 text-start text-xs text-black xs:text-lg"
                     onClick={() => {
                       addToCart(x.code + "-W", posterTypes.W);
                     }}
                   >
                     W
+                    {getNo(x.code + "-W") === null
+                      ? ""
+                      : `:x` + getNo(x.code + "-W")}
                   </button>
                 </div>
                 <div className="h-full w-1/3">
                   <button
-                    className="btn h-full w-full min-w-fit rounded-md rounded-l-none rounded-r-none rounded-t-none bg-slate-400 py-1 text-start text-lg text-black"
+                    className="btn h-full w-full min-w-fit rounded-md rounded-l-none rounded-r-none rounded-t-none bg-slate-400 py-1 text-start text-xs text-black xs:text-lg"
                     onClick={() => {
                       addToCart(x.code + "-M", posterTypes.M);
                     }}
                   >
                     M
+                    {getNo(x.code + "-M") === null
+                      ? ""
+                      : `:x` + getNo(x.code + "-M")}
                   </button>
                 </div>
                 <div className="h-full w-1/3">
                   <button
-                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-l-none  bg-yellow-500 py-1 text-start text-lg text-black"
+                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-l-none  bg-yellow-500 py-1 text-start text-xs text-black xs:text-lg"
                     onClick={() => {
                       addToCart(x.code + "-G", posterTypes.G);
                     }}
                   >
                     G
+                    {getNo(x.code + "-G") === null
+                      ? ""
+                      : `:x` + getNo(x.code + "-G")}
                   </button>
                 </div>
               </div>

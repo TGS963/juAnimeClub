@@ -25,10 +25,10 @@ module.exports = {
             transform: "translateX(0%)",
           },
           "60%": {
-            transform: "translateX(-9rem)",
+            transform: "translateX(-11rem)",
           },
           "80%": {
-            transform: "translateX(-9rem)",
+            transform: "translateX(-11rem)",
           },
           "100%": {
             transform: "translateX(0%)",

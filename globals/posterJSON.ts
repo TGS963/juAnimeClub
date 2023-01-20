@@ -73,12 +73,6 @@ export const posterJSON = [
         id: 0,
         code: "YN-I",
         image:
-          "https://lh3.googleusercontent.com/pw/AL9nZEVs1F4DWLoCVLsV0_E_nmH6vUZ1a1vZmKq0TdqN5LcqUm_k5obguJ06d-hveJkXHQNVKfcZeWsxkK8Bg3ZSGOZ1T0pO27kmgPGyi_hCVDOrPVLuJl7jm0AD9bOm5gEEiNf2ESlfQ3aar00zHViJFdg=w876-h657-no?authuser=0",
-      },
-      {
-        id: 1,
-        code: "YN-II",
-        image:
           "https://lh3.googleusercontent.com/pw/AL9nZEXSbZ149KSqCteyLkNu4segc2PhcyAdF0ggvxdYHBhTwMHClrk9XYUf69hznFKdDBu1KeKT3Sf8jGBwjzkvxYk_PXPF5cA3yILhKnU7uNACXIJbhvtC9SC64NlncqKV-t3FP0KU0JudvHYi1tUKpQo=w876-h657-no?authuser=0",
       },
     ],
@@ -331,6 +325,18 @@ export const posterJSON = [
   },
   {
     id: 24,
+    name: "To Your Eternity",
+    gallery: [
+      {
+        id: 0,
+        code: "TYE-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AL9nZEVO-pPkyEh68mwjdPVZigitPCri-B9BtkUKcIXOSnstf1ELKGid6zZcMUjtBZ-cQuog5sA1GyyGtWKEPpcitQ9xonqyA6nuUEHwC1lZmmLwNHystlvkszGGMtJorGmoxZqty7MSLHeuWrxhBUB9mDk=w876-h657-no?authuser=0",
+      },
+    ],
+  },
+  {
+    id: 25,
     name: "Misc/Games",
     gallery: [
       {
@@ -343,7 +349,7 @@ export const posterJSON = [
         id: 1,
         code: "MISC-II",
         image:
-          "https://lh3.googleusercontent.com/pw/AL9nZEVO-pPkyEh68mwjdPVZigitPCri-B9BtkUKcIXOSnstf1ELKGid6zZcMUjtBZ-cQuog5sA1GyyGtWKEPpcitQ9xonqyA6nuUEHwC1lZmmLwNHystlvkszGGMtJorGmoxZqty7MSLHeuWrxhBUB9mDk=w876-h657-no?authuser=0",
+          "https://lh3.googleusercontent.com/pw/AL9nZEVs1F4DWLoCVLsV0_E_nmH6vUZ1a1vZmKq0TdqN5LcqUm_k5obguJ06d-hveJkXHQNVKfcZeWsxkK8Bg3ZSGOZ1T0pO27kmgPGyi_hCVDOrPVLuJl7jm0AD9bOm5gEEiNf2ESlfQ3aar00zHViJFdg=w876-h657-no?authuser=0",
       },
     ],
   },

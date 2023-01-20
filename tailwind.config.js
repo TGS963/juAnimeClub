@@ -22,10 +22,13 @@ module.exports = {
             transform: "translateX(0%)",
           },
           "40%": {
-            transform: "translateX(-100%)",
+            transform: "translateX(0%)",
           },
           "60%": {
-            transform: "translateX(-100%)",
+            transform: "translateX(-9rem)",
+          },
+          "80%": {
+            transform: "translateX(-9rem)",
           },
           "100%": {
             transform: "translateX(0%)",
@@ -33,7 +36,7 @@ module.exports = {
         },
       },
       animation: {
-        "scale-in": "scale 2s ease-in-out",
+        "scale-in": "scale 3s ease-in-out",
       },
     },
   },

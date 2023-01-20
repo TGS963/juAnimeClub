@@ -58,7 +58,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   Modal.defaultStyles.overlay!.backgroundColor = "black";
   return (
     <>
-      <div className="fixed top-0 -right-36 flex h-full w-44 animate-scale-in flex-col justify-center gap-5 border-l-2 border-emerald-500 bg-[#131313] p-5 text-yellow-400 hover:right-0 md:right-0">
+      <div className="fixed top-0 -right-36 flex h-full w-44 animate-scale-in flex-col justify-center gap-5 border-l-2 border-emerald-500 bg-[#131313] p-5 text-yellow-400 hover:right-0 md:right-0 md:animate-none">
         <p>Cart:</p>
         {cartItems.map((item) => (
           <p key={null}>{item}</p>

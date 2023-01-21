@@ -182,7 +182,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                 </div>
               </div>
               <div className="h-fit w-full border-4 border-y-0 border-transparent">
-                <p className="border-2 border-y-0  border-black bg-emerald-500 p-2 shadow-md shadow-black">
+                <p className="border-2 border-y-0 border-black bg-emerald-500 py-1 px-2 text-xs shadow-md shadow-black xs:text-lg">
                   Add to Cart:
                 </p>
               </div>

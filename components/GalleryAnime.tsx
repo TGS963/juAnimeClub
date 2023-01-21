@@ -110,7 +110,10 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
               });
             }}
           >
-            {item} <span className="text-red-500">-</span>
+            {item}{" "}
+            <b>
+              <span className="text-xl text-red-500">-</span>
+            </b>
           </p>
         ))}
         <button
@@ -178,8 +181,13 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                   <p className="text-2xl">{x.code}</p>
                 </div>
               </div>
-              <div className="mr-4 flex w-full flex-row flex-wrap justify-between rounded-b-xl text-xs sm:text-lg">
-                <div className="h-full w-1/3">
+              <div className="h-fit w-full border-4 border-y-0 border-transparent">
+                <p className="border-2 border-y-0  border-black bg-emerald-500 p-2 shadow-md shadow-black">
+                  Add to Cart:
+                </p>
+              </div>
+              <div className="mr-4 flex w-full flex-row flex-wrap justify-between rounded-b-xl border-4 border-t-0 border-transparent text-xs sm:text-lg">
+                <div className="h-full w-1/3 border-2 border-r-0 border-black">
                   <button
                     className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-r-none bg-blue-400 py-1 text-start text-xs text-black xs:text-lg"
                     onClick={() => {
@@ -192,7 +200,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                       : `:x` + getNo(x.code + "-W")}
                   </button>
                 </div>
-                <div className="h-full w-1/3">
+                <div className="h-full w-1/3 border-2 border-black">
                   <button
                     className="btn h-full w-full min-w-fit rounded-md rounded-l-none rounded-r-none rounded-t-none bg-slate-400 py-1 text-start text-xs text-black xs:text-lg"
                     onClick={() => {
@@ -205,9 +213,9 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                       : `:x` + getNo(x.code + "-M")}
                   </button>
                 </div>
-                <div className="h-full w-1/3">
+                <div className="h-full w-1/3 border-2 border-l-0 border-black">
                   <button
-                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-l-none  bg-yellow-500 py-1 text-start text-xs text-black xs:text-lg"
+                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-l-none bg-yellow-500 py-1  text-start text-xs text-black xs:text-lg"
                     onClick={() => {
                       addToCart(x.code + "-G", posterTypes.G);
                     }}

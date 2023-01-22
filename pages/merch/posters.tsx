@@ -3,7 +3,7 @@ import { posterJSON } from "@/globals/posterJSON";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const Gallery = () => {
+const Posters = () => {
   const getImages = async () => {
     const bgc = await fetch("/api/get-mockup", {
       method: "POST",
@@ -63,4 +63,4 @@ const DisclamerComponent = () => {
   );
 };
 
-export default Gallery;
+export default Posters;

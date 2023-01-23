@@ -337,6 +337,18 @@ export const posterJSON = [
   },
   {
     id: 25,
+    name: "Bruh",
+    gallery: [
+      {
+        id: 0,
+        code: "BRUH-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AL9nZEVO-pPkyEh68mwjdPVZigitPCri-B9BtkUKcIXOSnstf1ELKGid6zZcMUjtBZ-cQuog5sA1GyyGtWKEPpcitQ9xonqyA6nuUEHwC1lZmmLwNHystlvkszGGMtJorGmoxZqty7MSLHeuWrxhBUB9mDk=w876-h657-no?authuser=0",
+      },
+    ],
+  },
+  {
+    id: 26,
     name: "Misc/Games",
     gallery: [
       {

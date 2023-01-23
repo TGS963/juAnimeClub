@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const Posters = () => {
+  const [liveBanner, setLiveBanner] = useState(true);
   const getImages = async () => {
     const bgc = await fetch("/api/get-mockup", {
       method: "POST",
@@ -14,15 +15,40 @@ const Posters = () => {
   };
   return (
     <>
-      <div className="sticky inset-0 z-10 mr-44 flex w-full flex-col items-center justify-center break-words bg-black/50 p-2 py-5 text-center text-yellow-400 backdrop-blur-lg md:flex-row md:items-center md:justify-evenly md:p-0 md:text-center">
+      <div
+        className={`w-full animate-blink bg-[#50C878] py-1 text-center text-sm text-black xs:text-base ${
+          liveBanner ? "" : "hidden"
+        }`}
+      >
+        <p>Pre-Orders Live!</p>
+        <button
+          className="absolute left-2 -top-1 cursor-pointer text-lg xs:top-0"
+          onClick={() => setLiveBanner(false)}
+        >
+          x
+        </button>
+      </div>
+      <div className="sticky inset-0 z-10 mr-44 flex w-full flex-col items-center justify-center self-start break-words bg-black/50 p-2 py-5 text-center text-yellow-400 backdrop-blur-lg md:flex-row md:items-center md:justify-evenly md:p-0 md:text-center">
         <p>
-          Gloss(G): <span className="text-emerald-500">₹99</span>
+          Gloss(G):{" "}
+          <span className="text-slate-400">
+            <s>₹150</s>
+          </span>
+          <span className="text-emerald-400"> ₹99</span>
         </p>
         <p>
-          Matte(M): <span className="text-emerald-500">₹99</span>
+          Matte(M):{" "}
+          <span className="text-slate-400">
+            <s>₹150</s>
+          </span>
+          <span className="text-emerald-400"> ₹99</span>
         </p>
         <p>
-          WaterProof Matte(W): <span className="text-emerald-500">₹169</span>
+          WaterProof Matte(W):{" "}
+          <span className="text-slate-400">
+            <s>₹220</s>
+          </span>
+          <span className="text-emerald-400"> ₹169</span>
         </p>
       </div>
       <div onLoad={getImages} className="m-5 flex flex-col justify-center">
@@ -48,14 +74,14 @@ const DisclamerComponent = () => {
           typeof="1"
           className="flex flex-col gap-2 text-start text-base text-white"
         >
-          <li>1. Either totally made made by us</li>
+          <li>1. Either completely made by us</li>
           <li>
-            2. Or made from the images/posters/wallpapers that are free to
-            download and/or use
+            2. Or made from images/posters/wallpapers that are free to download
+            and/or use
           </li>
           <li>
-            3. Or made by any artist(s) whose permission is taken and credit
-            is given properly
+            3. Or made by any artist(s) whose permission is taken and credit is
+            given properly
           </li>
         </ol>
       </p>

@@ -79,7 +79,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   return (
     <>
       <div
-        className={`fixed top-0 flex h-full w-44 animate-scale-in flex-col justify-center gap-5 border-l-2 border-emerald-500 bg-[#131313] p-5 text-yellow-400 ${
+        className={`fixed top-0 z-20 flex h-full w-44 animate-scale-in flex-col justify-center gap-5 border-l-2 border-emerald-500 bg-[#131313] p-5 text-yellow-400 ${
           cartShow ? "right-0" : "-right-44"
         } md:right-0 md:animate-none`}
       >

@@ -34,9 +34,21 @@ module.exports = {
             transform: "translateX(0%)",
           },
         },
+        blink: {
+          "0%": {
+            background: "#50C878",
+          },
+          "50%": {
+            background: "#FFF000",
+          },
+          "0%": {
+            background: "#50C878",
+          },
+        },
       },
       animation: {
         "scale-in": "scale 3s ease-in-out",
+        blink: "blink 2s ease-in-out infinite",
       },
     },
   },

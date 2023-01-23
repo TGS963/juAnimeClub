@@ -31,7 +31,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   };
   const [cartItems, setCartItems] = useRecoilState(cart);
   const [price, setPrice] = useRecoilState(cartPrice);
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(-1);
   const [cartShow, setCartShow] = useState(false);
   const addToCart = (posterCode: string, posterType: number) => {
     if (cartItems.some((item) => item.includes(posterCode))) {
@@ -73,12 +73,14 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   const onClose = (e: any) => {
     e.preventDefault();
     console.log("hiding modal");
-    setShowInfo((prev) => !prev);
+    setShowInfo((prev) => -1);
   };
   Modal.defaultStyles.overlay!.backgroundColor = "black";
+  Modal.setAppElement("#main");
   return (
     <>
       <div
+        id="main"
         className={`fixed top-0 z-20 flex h-full w-44 animate-scale-in flex-col justify-center gap-5 border-l-2 border-emerald-500 bg-[#131313] p-5 text-yellow-400 ${
           cartShow ? "right-0" : "-right-44"
         } md:right-0 md:animate-none`}
@@ -151,15 +153,17 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
                       background: "black",
                     },
                   });
-                  setShowInfo(!showInfo);
+                  if (showInfo !== -1) setShowInfo(-1);
+                  else setShowInfo(x.id);
+                  console.log(x.id);
                 }}
               >
                 <Modal
-                  isOpen={showInfo}
+                  isOpen={showInfo === x.id ? true : false}
                   onRequestClose={onClose}
                   shouldCloseOnOverlayClick={true}
                 >
-                  <div className=" fixed inset-10 bg-black" onClick={onClose}>
+                  <div className="fixed inset-0 bg-black" onClick={onClose}>
                     <Image
                       src={x.image}
                       layout="fill"

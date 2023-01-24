@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import React, { useEffect, useState } from "react";
 import { cartPrice } from "../globals/cartPrice";
+import Router, { useRouter } from "next/router";
 import { randomInt, randomUUID } from "crypto";
 import GalleryInfo from "./GalleryInfo";
 import { useRecoilState } from "recoil";
@@ -16,6 +17,8 @@ interface GalleryProps {
 }
 
 const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
+  const router = useRouter();
+
   const matte = 99;
   const gloss = 99;
   const waterproof = 169;
@@ -77,6 +80,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   };
   Modal.defaultStyles.overlay!.backgroundColor = "black";
   Modal.setAppElement("#main");
+
   return (
     <>
       <div
@@ -148,14 +152,17 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
               <div
                 className={`group relative flex h-full w-full cursor-pointer flex-row overflow-hidden rounded-xl border-4 border-transparent duration-100 hover:border-cyan-200`}
                 onClick={() => {
-                  toast.custom("Press Esc, or click to exit", {
-                    style: {
-                      background: "black",
-                    },
-                  });
                   if (showInfo !== -1) setShowInfo(-1);
-                  else setShowInfo(x.id);
-                  console.log(x.id);
+                  else {
+                    setShowInfo(x.id);
+                    toast.custom("Press Esc, or click to exit", {
+                      duration: 700,
+                      style: {
+                        background: "black",
+                      },
+                      position: "bottom-center",
+                    });
+                  }
                 }}
               >
                 <Modal

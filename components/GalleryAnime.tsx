@@ -86,7 +86,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
         } md:right-0 md:animate-none`}
       >
         <div
-          className="group absolute -left-4 flex h-36 w-4 cursor-pointer items-center justify-center rounded-l-xl bg-emerald-500 xs:-left-8 xs:h-44 xs:w-8 md:hidden"
+          className="group absolute -left-4 flex h-36 w-4 cursor-pointer items-center justify-center rounded-l-xl bg-emerald-500 shadow-md shadow-black xs:-left-8 xs:h-44 xs:w-8 md:hidden"
           onClick={() => setCartShow((prev) => !prev)}
         >
           <p className="-rotate-90 pb-1 text-sm text-black xs:pb-2 xs:text-lg">

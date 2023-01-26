@@ -2,6 +2,7 @@ import GalleryAnime from "@/components/GalleryAnime";
 import { posterJSON } from "@/globals/posterJSON";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 const Posters = () => {
   const [liveBanner, setLiveBanner] = useState(true);
@@ -15,6 +16,17 @@ const Posters = () => {
   };
   return (
     <>
+      <Head>
+        <title>Order your Posters!</title>
+        <meta property="og:url" content="your url" />
+        <meta property="og:title" content="Order your Posters!" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="Select from our wide range of posters"
+        />
+        <meta property="og:image" content="/juac.png" />
+      </Head>
       <div
         className={`w-full animate-blink bg-[#50C878] py-1 text-center text-sm text-black xs:text-base ${
           liveBanner ? "" : "hidden"

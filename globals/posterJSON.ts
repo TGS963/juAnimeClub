@@ -213,6 +213,12 @@ export const posterJSON = [
         image:
           "https://lh3.googleusercontent.com/pw/AL9nZEV15Bc5f8Kxr9kx7cwLu6K1BsxhMI9DZYo04ztZ2Jp_kfjuQs2wPMKarbf_cpQXJVMc00zqoUDg4CRCqxnGqURdoopOG1YXJaZYXycou8Bq7SwmIBYbwrXF-ZZFu2kTTt1YUNu3kWiQND6BN020Hds=w876-h657-no?authuser=0",
       },
+      {
+        id: 0,
+        code: "SG-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AnSFqy_pGypaRqs_2AAjUvR90CQnAAD7C_CxMgnHr4qyEkzzq9QIw8w_7ura4iJRMCRRWjMPPEa542pL_YvfvzBbUaS5hy9bcYG2n0s2v6fbE3aioRr9Qd-YTP7UJvJFxEoBnDP9y7XhperL1pgV4=w1210-h908-no?authuser=4",
+      },
     ],
   },
   {

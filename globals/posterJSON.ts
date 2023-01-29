@@ -137,9 +137,15 @@ export const posterJSON = [
     gallery: [
       {
         id: 0,
-        code: "MHA-I",
+        code: "BNHA-I",
         image:
           "https://lh3.googleusercontent.com/pw/AL9nZEWpJRn7IoXKM4dG98T2en-N-i0zibvJYSSeRBlqEKkgNHjE7pvbyZU4SnQhfJT6iJdtLEYXHbUObfLDmHEUUSGww1xVLBzZHyNj3dBysm_Pd_5qxQS2rIwSfnHUPI9d40jTMQThayRnlbDZUAth7gk=w876-h657-no?authuser=0",
+      },
+      {
+        id: 1,
+        code: "BNA-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AihbdJUKDtFHObeJlJL0EZvVoUE7yUzILiJQLu5r7ml91KPu2d4ESqet2SlFTO_YIH4aqxpzXVApBYAeaSWvRMzKjyDr2rWnjwFGPY4pzMrCibSAjEIkYaJVeJ-9CGkr4cTBKZHUJEbEHV7RVMxA0=w1210-h908-no?authuser=4",
       },
     ],
   },
@@ -227,9 +233,15 @@ export const posterJSON = [
     gallery: [
       {
         id: 0,
-        code: "SPYFAMI-I",
+        code: "SxY-I",
         image:
           "https://lh3.googleusercontent.com/pw/AL9nZEV93SgKMsh54NiOjQLApqRm5O_pSYHve8cAMFvI24imVij1HAaNC6g9Cqg7_0PoKORlbEPMv7IyMjlRVVz2rIIc5_5n_Ulzc4EufZQwaYyr527prt4d-onpNqhXlGCYShTLvDyvntr7yP-Ou3G_jOM=w876-h657-no?authuser=0",
+      },
+      {
+        id: 1,
+        code: "SxY-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8ABOn9sn3JDA6HrusZDZSW6MVBO78lBSVlDVv12OSUQOlAei-7SVp90DuGqNofFlifCMIunf3dfadKv2A5VVLi8zbksVnRzOPcl95AV8_CnI29B5zWlz7sgLqQPv5TeY0FoabSyk97mHvIbM6XcOc8=w1210-h908-no?authuser=4",
       },
     ],
   },
@@ -242,6 +254,12 @@ export const posterJSON = [
         code: "OPM-I",
         image:
           "https://lh3.googleusercontent.com/pw/AL9nZEWhrI3gfahT50vIR4oJwnSMVKbqfzp3ndJj1jvwIFMc4eMfZcxYQG2ZL1rG55iEmFDWHUbs_DgY0i07f5ijSbt0yIzjltGz9W44EQq9_eMVXrPHCpi4Ct-37DHFMISBJOkipmm0YkaEZy_mIt0B8gs=w876-h657-no?authuser=0",
+      },
+      {
+        id: 1,
+        code: "OPM-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AAYu-cgpoLoCZA5LyJXUP0MUIUqwN-rb2r4F90L7D0XcL1bxihWyll7Cu-OKk7HlTtP_nKfh42DeCe2VjVuHu4_Ro1LTfiir06jhQlo1xjtvxvQHa0Xq5wU0qNvgdpl2xtqO5yNb4QDnQOsu95Qt8=w1210-h908-no?authuser=4",
       },
     ],
   },
@@ -315,6 +333,18 @@ export const posterJSON = [
         image:
           "https://lh3.googleusercontent.com/pw/AL9nZEVD7wp3BqlKFizzKCsr69g_HT-XS3gX1twQ0-WUZcaugjCB_Io-iSfVbO1VRrnl6oIhu7ef0uEvzYdxUkJiE1VdNX_HYqGxJEK6TVBBzKrdIoklBTuH8e88yoJqmLYiHhTkdkkHuaGiCmrKrl3UswA=w876-h657-no?authuser=0",
       },
+      {
+        id: 1,
+        code: "SNK-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AvxNM9XUd1zRjx2tV-cvaZPqAnP4yvQjNL4f_Bn1lfVbC8X3_A15lbdnHCvBKw2vQ9rhMr9ckgpKnA2y3sjTXnNtt4Tew_sZ-eQSyL-ZpJDmb5L_7TrP5mE05gMZxnRxGzRxeURevtzVWmT8-zfoc=w1210-h908-no?authuser=4",
+      },
+      {
+        id: 2,
+        code: "SNK-III",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AfRe4eVZnLl7LND_nO3OFtLU8ZfFclCmYLTHkTXMXZrm763M9lbRByFIwx0JQnbUyqVB8wMaByWrC_yGMoKjMvwj7VHlxKeE6SMUICQjleHsMZJvNlVGWOxFaWzbkQYY8H2o8Nf_pWUtvdROYAKM0=w1210-h908-no?authuser=4",
+      },
     ],
   },
   {
@@ -323,7 +353,7 @@ export const posterJSON = [
     gallery: [
       {
         id: 0,
-        code: "JNBA-I",
+        code: "JJBA-I",
         image:
           "https://lh3.googleusercontent.com/pw/AL9nZEVTb6yqdFwJyIjn_5vmsSD-TryirsVnNrHn8K6PaN4j7WgYYwZT1wrMSVZbB0ROiaYCog_LfWRdWzT3YhGzIetXurU1ZFnljV5lI5Z5kZPlkADgzNS9cJL63O8Qp8Emb-XmdUVbRDBLLG2_04pyYZQ=w876-h657-no?authuser=0",
       },
@@ -342,7 +372,211 @@ export const posterJSON = [
     ],
   },
   {
+    id: 25,
+    name: "Kakegurui",
+    gallery: [
+      {
+        id: 0,
+        code: "KKG-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8BATOhGexa9HUFhD_ykzusq7HqLwQSaZQTGZqm5uU5iaLfeK8IFLpvhTU7M-sUSa4TFmpDDrK5LH4jcNPEhSqLlCeSnv34eEgYWUPTmfXtVR56QL-T87LKt8GfADdGA3RlO0zBOR1aLS5wglNp90yw=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
     id: 26,
+    name: "Akira",
+    gallery: [
+      {
+        id: 0,
+        code: "AKR-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AXRLTHriswHCC9TRfn513S1Bim9mdPmZZNVODoojwU-Od6ZAMKsfc1ts8SznzvroajuoF7S-t49YxcaTwkeApt8zCLU9fwUX-G77XDc8KPxSV3-_PYBsfddgv3AVSsE28rtg1t63Jcn7DJmv5_b0M=w1210-h908-no?authuser=4",
+      },
+      {
+        id: 1,
+        code: "AKR-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AL7_c_SxmgRnYXV4zwufpMkmJ94Gnipp8dAEPX018eirrKJdlX-zFGlFQ7J-wBd-wqQg1sHT_zXwo5eqK58BvTE52McMXlSf_O64OYd1m0crb0L-m8ZZdgE0dykewNz59cPhyqjIyco_9Psm-RBk0=w1210-h908-no?authuser=4",
+      },
+      {
+        id: 2,
+        code: "AKR-III",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8CT2BXqO-o2sJgTUhzVvnrT4vhpnCOMElmaFY1KTBRwgLc6ddiBpGeABp-hcJWJ5RWuaTXHBtNWBK_QUMm6zWWFkPx3zLVwKmTNNDAy1PYprVsrngprMh90YwpOUkeCOFOClzjwv1RTJVbWkjKOopM=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 27,
+    name: "Hunter × Hunter",
+    gallery: [
+      {
+        id: 0,
+        code: "HxH-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8BnCks3gU_IYfE5XaDABWqIS2qv_lcneVVta2SDMvxjvV7y9oBOY24II_kgqVYJ-LhB72_cTNoAC--xqWfbJZP9wxCp_d5RadTflNBguc0uv8qOlPZ9W2bOG98EyLV_oSFE-7aabAXHPkAGsN5u92I=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 28,
+    name: "Fullmetal Alchemist",
+    gallery: [
+      {
+        id: 0,
+        code: "FMA-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8BN4rnoPgUtr21OtDwrCEAe-zvraTmDY2TCW51KuO6eTz8UxXju2iPuXQRtzwUxF9bYJ-NpGpWzM2F-jzGmUMevpXynkSFH_GR58BZA-j52-jD1rqrW75drZUysr9bEV8NV9sHC8KLE515y1NuIg_U=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 29,
+    name: "Cowboy Beebop",
+    gallery: [
+      {
+        id: 0,
+        code: "CBB-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8A52KuhVg0_JRLy0VQeY_tKCKik3vBSAruQpWxiIVxjtPCbA0YmTaz-PMZBgRvzr40xaNUcsspFEvJLGqTjYJjNVQKiFGMB-LEpbJ9tAhbd5i7urvbq7AheckcnLbBtzKDKS9pkdeCdD2wTEk69drE=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 30,
+    name: "Ghost In The Shell",
+    gallery: [
+      {
+        id: 0,
+        code: "GITS-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8BdnuLeXVQZOR-Z7PpBFyfv4Hmntn67WYlikxiwKE6ibx-bdWtKFWiytoDK47qxfFQUxEh3x0qUoCvNnWRfLgR9d4R6G_U_Byp4rXW3mtULWN6ZhATwz0Zmw8C4Y7CY0RfsmSIMVOQkt5aFZ8GRoDs=w1210-h908-no?authuser=4",
+      },
+      {
+        id: 1,
+        code: "GITS-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8DVrPAx5d5POGQFNa_UKZyD3e4B8Os5JK6M-HvZ-5iIpp50YHOTJddRpICHCRPTi54fO1HYjfAXZc2C86I7f9Q5ApeJ1ZhzErjvm-M1mN2AbYru-WjYEPLwmP6RrK7-bl0D68p9Y4XdI6JWVDE_Wac=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 31,
+    name: "Darling in the FranXX",
+    gallery: [
+      {
+        id: 0,
+        code: "DITF-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8DmNuk0Ka7cK-PhqpY4h-lnxRtJwjdC-t9hmATti6Q4POMoNQvx4nhMdTMW4XXiJKSngVLVe5oUGwk1MUg78Ep4WHaB_ipb65psivP6Vsv1tZOx8DQDZjsmz401zD2tp-Ui6dEVkv2LlEtiLHDQKZc=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 32,
+    name: "Re;Zero",
+    gallery: [
+      {
+        id: 0,
+        code: "RZ-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8ASdCTn7Z28A_ohkAMt3lxFfKiFfGAu9XIvIyDzY1FpSoyuYnZvyzNYLpuuL_DyjAGcxGdR_dQjKaaFVTSIXkNjwz_x8cWKdB0kU8VdFjPJkW77nDfy0bPuCwc3WvmbCmwH5zSyGao32JOUJNQI0eo=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 33,
+    name: "One Piece",
+    gallery: [
+      {
+        id: 0,
+        code: "OP-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8D0TfxuyeNak6Q0rzb4b-8RxpU0k_NlzT9cQMJb2ZRdQVpJrxEnqqQldke7okBXLx-RuVZryM_UJEb4xCLIieGE5UDk5_KRagg8LW4a_OXkRNFf9wdMWMyBWIiuxSj5dpl2XPPKBd_d6b0a9XqHs5U=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 34,
+    name: "Overlord",
+    gallery: [
+      {
+        id: 0,
+        code: "OL-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8DoDspwlWIzsVFUb-uZFu4sOrOfr0qczYAb77cjLolLd88v4qIz6usriTCGcM7LJ-aofQwY1_DcqWeHDZefuvUhZJeUYeIVRkcMTKZhNKuRdlaEcKLS3-HuPI-epNlnpES3bT6lepEACL5GY2c4smE=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 35,
+    name: "Lycoris Recoil",
+    gallery: [
+      {
+        id: 0,
+        code: "LR-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8DhE4rT5r35QE7txyQDE4m66bLL8tZnemB6uROmfWl0O-mZ6jRcPMMQA_fxKYOwsUyQ3LaON86emufLhE6Z-UvZA_45yg7AZV4ctNRgFGhoq1zjI1u5GUiTbKd9gU5UQnxAjWW28P3Ah40ewRdAiVg=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 36,
+    name: "Bleach",
+    gallery: [
+      {
+        id: 0,
+        code: "BLCH-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AeqxHBpZFsRrFFUwQf7dOFG6iVJBrcMmAgglt-If7id0CvCQBKUJ3vNQwv6D07QYIydtb-XukXUuM_n8cJe34VT_pT7R7W9Ont_XtAFqqgj1UqGrq4DcRNKcXtpOMOrJC-BLc1k7VCDi0KT3soi_8=w1210-h908-no?authuser=4",
+      },
+      {
+        id: 1,
+        code: "BLCH-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8BYLwHmCtbjDsaqUV1ymSRmRFpKDWF5K3G8lv9zaxP3lYdbo5MPaUl2gMM60lqSKyDrxMT2pE3WUS_PgY1tTz1SSVI4Q6JTfZX1VRhToVPdUdqdBAGMGhotluUli44O5YRs45kRpXGU-a0FrdedweA=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 37,
+    name: "High School DxD",
+    gallery: [
+      {
+        id: 0,
+        code: "DxD-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8Cy8RRpuWtoKnCZqBgyxy93byntB7P2skghT5B8RBIxUXmOqg--X1smi4mQgFQJ09-BOnas4aeq90kXh2Hp2_sw7NFIlyQLtHr11nNG4TLhzzGIXEKUXQq-S13pz46eBPAXpEsheAEw63HnKFB3r4U=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 38,
+    name: "Bocchi the Rock!",
+    gallery: [
+      {
+        id: 0,
+        code: "BTR-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8DlEgwDACRGP5YuFSUxwU9zwlGrcC0hsjvSjoUFIJuR-t1JhWI8xCBsYImJZsLRYi3Vl7AUkL4IPaPREC9prXuQCXlpxsJFoWT-JwngZvb6iFU9IgAa2piySIeUh-MiTeWxdbZ52gJoTIn8furnuoI=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 39,
+    name: "Blue Lock",
+    gallery: [
+      {
+        id: 0,
+        code: "BL-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8CQQp1rjKTPofzA8Z9Rl_KodyHG5lzMaIzYFBJ7MFBtZNEmInX8DEMdHsNz9MTrfrf9aEnSK1uDqYj1z8xWM6hOybsSp5vBiaR8SCJZbiPWeysRINfsapNl9yDza8i1YKKROvJDVv_N17UqoJhRscQ=w1210-h908-no?authuser=4",
+      },
+    ],
+  },
+  {
+    id: 40,
     name: "Misc/Games",
     gallery: [
       {

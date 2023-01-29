@@ -143,7 +143,7 @@ export const posterJSON = [
       },
       {
         id: 1,
-        code: "BNA-II",
+        code: "BNHA-II",
         image:
           "https://lh3.googleusercontent.com/pw/AMWts8AihbdJUKDtFHObeJlJL0EZvVoUE7yUzILiJQLu5r7ml91KPu2d4ESqet2SlFTO_YIH4aqxpzXVApBYAeaSWvRMzKjyDr2rWnjwFGPY4pzMrCibSAjEIkYaJVeJ-9CGkr4cTBKZHUJEbEHV7RVMxA0=w1210-h908-no?authuser=4",
       },

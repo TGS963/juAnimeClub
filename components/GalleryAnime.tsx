@@ -122,6 +122,9 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
             </b>
           </p>
         ))}
+        <a target="_blank" href={`https://docs.google.com/forms/d/e/1FAIpQLSc9aSUr6TaIoSXV8r1yrcjcxb8TAaeyRmkt7DFG5Mb_PCyz7w/viewform?usp=pp_url&entry.2043637913=` + cartItems.join()} rel="noopener noreferrer">
+
+
         <button
           className="btn rounded-xl bg-green-400 text-black"
           onClick={() => {
@@ -134,6 +137,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
         >
           Confirm: ₹{price}
         </button>
+        </a>
         <button
           className="btn rounded-xl bg-slate-400 text-black"
           onClick={() => {

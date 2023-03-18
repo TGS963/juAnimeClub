@@ -129,6 +129,12 @@ export const posterJSON = [
         image:
           "https://lh3.googleusercontent.com/pw/AL9nZEUzFCNbSrV3Gv2LBKb8MH5btiuZEz0s11-37x9B9qLQA6O7Bp5BbQe-rsoYOqwxReCqR2WQyvvHec4Tkrky4TJTl4fKqnjFoAjMtcZWhOxL7KrIvOXD5rViStr92N4RgJLs8EMFzjqYF_UzHCeeuKg=w876-h657-no?",
       },
+      {
+        id: 1,
+        code: "NARUTO-II",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8AVACZYA9k-T_VDlC7t5fhFKj0vy8RPAFX2Wkp1_SKQRYmBlFB_S2yaMpkN4EAaUKv7VJzBI9oEZWpIEnC5FkFg6hiFMh7GZCD-C9rZT-gLF9ukxhqLC8p3LHIKiYLtNJM0KHUytZfuIqObcknS_83P=w1210-h908-s-no?",
+      },
     ],
   },
   {
@@ -1112,6 +1118,18 @@ export const posterJSON = [
         code: "IWTEYP-I",
         image:
           "https://lh3.googleusercontent.com/pw/AMWts8C5T-PeS5nzH3QdC1M_suaYN-WNxnodpDdkFa_QWyu-h8NKRm_P9vtvSdZtYkTQitZ-Pki_twdUfTZq-yKmqXK2is81BYPMTYaLhSKJYjc29XtXdzkhrSJGkCxpJSH2qxLJ16YgdpATvi39__QWyi9F=w1210-h908-no?",
+      },
+    ],
+  },
+  {
+    id: 70,
+    name: "Banana Fish",
+    gallery: [
+      {
+        id: 0,
+        code: "BF-I",
+        image:
+          "https://lh3.googleusercontent.com/pw/AMWts8Cz-0e0fSilOwBSbUkK6ZOVEK101NQTsDRzYqC9fQauu8QN6HY-JvM_F_wjBze8Q9NJIkn_AqyPzm2zaYJdwvmiKZAhGeKnYFyGjAsia5x93-DnMnIA-lCm9rKYt0en1mVIwCT6Vqb18ylmvW_rtmhn=w1210-h908-s-no?",
       },
     ],
   },

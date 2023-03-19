@@ -32,7 +32,7 @@ const Posters = () => {
           liveBanner ? "" : "hidden"
         }`}
       >
-        <p>Pre-Orders Live!</p>
+        <p>Pre-Orders Live! All posters 30% OFF!</p>
         <button
           className="absolute left-2 -top-1 cursor-pointer text-lg xs:top-0"
           onClick={() => setLiveBanner(false)}
@@ -58,21 +58,19 @@ const Posters = () => {
         <p>
           WaterProof Matte(W): (A3) (225 micron){" "}
           <span className="text-slate-400">
-            <s>₹99</s>
+            <s>₹169</s>
           </span>
-          <span className="text-emerald-400"> ₹99</span>
+          <span className="text-emerald-400"> ₹119</span>
         </p>
       </div>
       <div onLoad={getImages} className="m-5 flex flex-col justify-center">
-        {posterJSON
-          .sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase())
-          .map((x) => {
-            return (
-              <div key={x.id} className="flex flex-col">
-                <GalleryAnime aniName={x.name} numbers={x.gallery} />
-              </div>
-            );
-          })}
+        {posterJSON.map((x) => {
+          return (
+            <div key={x.id} className="flex flex-col">
+              <GalleryAnime aniName={x.name} numbers={x.gallery} />
+            </div>
+          );
+        })}
       </div>
       <DisclamerComponent />
     </>

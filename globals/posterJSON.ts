@@ -1169,4 +1169,9 @@ export const posterJSON = [
       },
     ],
   },
-];
+].sort((a, b) => {
+  if (a.name.toLowerCase() >= b.name.toLowerCase()) {
+    return 1;
+  }
+  return -1;
+});

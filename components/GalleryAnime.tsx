@@ -28,9 +28,9 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
     W: number;
   }
   const posterTypes: posterTypesInterface = {
-    M: 99,
-    G: 99,
-    W: 169,
+    M: 69,
+    G: 69,
+    W: 99,
   };
   const [cartItems, setCartItems] = useRecoilState(cart);
   const [price, setPrice] = useRecoilState(cartPrice);
@@ -122,21 +122,26 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
             </b>
           </p>
         ))}
-        <a target="_blank" href={`https://docs.google.com/forms/d/e/1FAIpQLSc9aSUr6TaIoSXV8r1yrcjcxb8TAaeyRmkt7DFG5Mb_PCyz7w/viewform?usp=pp_url&entry.2043637913=` + cartItems.join()} rel="noopener noreferrer">
-
-
-        <button
-          className="btn rounded-xl bg-green-400 text-black"
-          onClick={() => {
-            navigator.clipboard.writeText(cartItems.join());
-            toast.success(
-              "Order Copied to Clipboard, paste back in google forms",
-              { duration: 5000 }
-            );
-          }}
+        <a
+          target="_blank"
+          href={
+            `https://docs.google.com/forms/d/e/1FAIpQLSc9aSUr6TaIoSXV8r1yrcjcxb8TAaeyRmkt7DFG5Mb_PCyz7w/viewform?usp=pp_url&entry.2043637913=` +
+            cartItems.join()
+          }
+          rel="noopener noreferrer"
         >
-          Confirm: ₹{price}
-        </button>
+          <button
+            className="btn rounded-xl bg-green-400 text-black"
+            onClick={() => {
+              navigator.clipboard.writeText(cartItems.join());
+              toast.success(
+                "Order Copied to Clipboard, paste back in google forms",
+                { duration: 5000 }
+              );
+            }}
+          >
+            Confirm: ₹{price}
+          </button>
         </a>
         <button
           className="btn rounded-xl bg-slate-400 text-black"

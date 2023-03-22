@@ -44,14 +44,14 @@ const Posters = () => {
         <p>
           Gloss(G): (A3) (300+ gsm){" "}
           <span className="text-slate-400">
-            <s>₹69</s>
+            <s>₹99</s>
           </span>
           <span className="text-emerald-400"> ₹69</span>
         </p>
         <p>
           Matte(M): (A3) (300+ gsm){" "}
           <span className="text-slate-400">
-            <s>₹69</s>
+            <s>₹99</s>
           </span>
           <span className="text-emerald-400"> ₹69</span>
         </p>

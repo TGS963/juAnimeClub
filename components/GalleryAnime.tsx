@@ -14,9 +14,10 @@ import Link from "next/link";
 interface GalleryProps {
   aniName: string;
   numbers: any[];
+  index: number;
 }
 
-const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
+const GalleryAnime = ({ aniName, numbers, index }: GalleryProps) => {
   const router = useRouter();
 
   const matte = 69;
@@ -36,6 +37,7 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
   const [price, setPrice] = useRecoilState(cartPrice);
   const [showInfo, setShowInfo] = useState(-1);
   const [cartShow, setCartShow] = useState(false);
+  const [posterShow, setPosterShow] = useState(index === 0 ? true : false);
   const addToCart = (posterCode: string, posterType: number) => {
     if (cartItems.some((item) => item.includes(posterCode))) {
       let tmp = Array.from(cartItems);
@@ -153,103 +155,112 @@ const GalleryAnime = ({ aniName, numbers }: GalleryProps) => {
           Reset
         </button>
       </div>
-      <p className="my-5 text-2xl underline">{aniName}</p>
+      <div
+        className="my-5  flex cursor-pointer select-none flex-row"
+        onClick={() => setPosterShow(!posterShow)}
+      >
+        <p className={`${!posterShow ? "-rotate-90" : ""} text-center`}>▼</p>
+        <p className="mx-4 text-2xl ">
+          <u>{aniName}</u>
+        </p>
+      </div>
       <div className="mr-44 flex w-full flex-col flex-wrap justify-start gap-12 md:flex-row">
-        {numbers.map((x) => {
-          return (
-            <div className="flex w-full flex-col md:basis-1/3" key={x.id}>
-              <div
-                className={`group relative flex h-full w-full cursor-pointer flex-row overflow-hidden rounded-xl border-4 border-transparent duration-100 hover:border-cyan-200`}
-                onClick={() => {
-                  if (showInfo !== -1) setShowInfo(-1);
-                  else {
-                    setShowInfo(x.id);
-                    toast.custom("Press Esc, or click to exit", {
-                      duration: 700,
-                      style: {
-                        background: "black",
-                      },
-                      position: "bottom-center",
-                    });
-                  }
-                }}
-              >
-                <Modal
-                  isOpen={showInfo === x.id ? true : false}
-                  onRequestClose={onClose}
-                  shouldCloseOnOverlayClick={true}
+        {posterShow &&
+          numbers.map((x) => {
+            return (
+              <div className="flex w-full flex-col md:basis-1/3" key={x.id}>
+                <div
+                  className={`group relative flex h-full w-full cursor-pointer flex-row overflow-hidden rounded-xl border-4 border-transparent duration-100 hover:border-cyan-200`}
+                  onClick={() => {
+                    if (showInfo !== -1) setShowInfo(-1);
+                    else {
+                      setShowInfo(x.id);
+                      toast.custom("Press Esc, or click to exit", {
+                        duration: 700,
+                        style: {
+                          background: "black",
+                        },
+                        position: "bottom-center",
+                      });
+                    }
+                  }}
                 >
-                  <div className="fixed inset-0 bg-black" onClick={onClose}>
-                    <Image
-                      src={x.image}
-                      layout="fill"
-                      objectFit="scale-down"
-                      alt="poster"
-                    />
-                  </div>
-                </Modal>
+                  <Modal
+                    isOpen={showInfo === x.id ? true : false}
+                    onRequestClose={onClose}
+                    shouldCloseOnOverlayClick={true}
+                  >
+                    <div className="fixed inset-0 bg-black" onClick={onClose}>
+                      <Image
+                        src={x.image}
+                        layout="fill"
+                        objectFit="scale-down"
+                        alt="poster"
+                      />
+                    </div>
+                  </Modal>
 
-                <div className="absolute h-full w-1/2 -translate-y-1/4 -translate-x-2/4 rotate-12 -skew-y-12 bg-gradient-to-t from-transparent to-slate-200 opacity-30 group-hover:w-3/4" />
-                <Image
-                  className="-z-10 rounded-xl group-hover:scale-110"
-                  objectFit="cover"
-                  src={x.image}
-                  layout="fill"
-                  alt="bg"
-                />
-                <div className="flex h-56 w-full flex-row items-end justify-between rounded-xl bg-gradient-to-t from-black to-transparent p-6">
-                  <p className="text-2xl">{x.code}</p>
+                  <div className="absolute h-full w-1/2 -translate-y-1/4 -translate-x-2/4 rotate-12 -skew-y-12 bg-gradient-to-t from-transparent to-slate-200 opacity-30 group-hover:w-3/4" />
+                  <Image
+                    className="-z-10 rounded-xl group-hover:scale-110"
+                    objectFit="cover"
+                    src={x.image}
+                    layout="fill"
+                    alt="bg"
+                  />
+                  <div className="flex h-56 w-full flex-row items-end justify-between rounded-xl bg-gradient-to-t from-black to-transparent p-6">
+                    <p className="text-2xl">{x.code}</p>
+                  </div>
+                </div>
+                <div className="h-fit w-full border-4 border-y-0 border-transparent">
+                  <p className="border-2 border-y-0 border-black bg-emerald-500 py-1 px-2 text-xs shadow-md shadow-black xs:text-lg">
+                    Add to Cart:
+                  </p>
+                </div>
+                <div className="mr-4 flex w-full flex-row flex-wrap justify-between rounded-b-xl border-4 border-t-0 border-transparent text-xs sm:text-lg">
+                  <div className="h-full w-1/3 border-2 border-r-0 border-black">
+                    <button
+                      className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-r-none bg-blue-400 py-1 text-start text-xs text-black xs:text-lg"
+                      onClick={() => {
+                        addToCart(x.code + "-W", posterTypes.W);
+                      }}
+                    >
+                      W
+                      {getNo(x.code + "-W") === null
+                        ? ""
+                        : `:x` + getNo(x.code + "-W")}
+                    </button>
+                  </div>
+                  <div className="h-full w-1/3 border-2 border-black">
+                    <button
+                      className="btn h-full w-full min-w-fit rounded-md rounded-l-none rounded-r-none rounded-t-none bg-slate-400 py-1 text-start text-xs text-black xs:text-lg"
+                      onClick={() => {
+                        addToCart(x.code + "-M", posterTypes.M);
+                      }}
+                    >
+                      M
+                      {getNo(x.code + "-M") === null
+                        ? ""
+                        : `:x` + getNo(x.code + "-M")}
+                    </button>
+                  </div>
+                  <div className="h-full w-1/3 border-2 border-l-0 border-black">
+                    <button
+                      className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-l-none bg-yellow-500 py-1  text-start text-xs text-black xs:text-lg"
+                      onClick={() => {
+                        addToCart(x.code + "-G", posterTypes.G);
+                      }}
+                    >
+                      G
+                      {getNo(x.code + "-G") === null
+                        ? ""
+                        : `:x` + getNo(x.code + "-G")}
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div className="h-fit w-full border-4 border-y-0 border-transparent">
-                <p className="border-2 border-y-0 border-black bg-emerald-500 py-1 px-2 text-xs shadow-md shadow-black xs:text-lg">
-                  Add to Cart:
-                </p>
-              </div>
-              <div className="mr-4 flex w-full flex-row flex-wrap justify-between rounded-b-xl border-4 border-t-0 border-transparent text-xs sm:text-lg">
-                <div className="h-full w-1/3 border-2 border-r-0 border-black">
-                  <button
-                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-r-none bg-blue-400 py-1 text-start text-xs text-black xs:text-lg"
-                    onClick={() => {
-                      addToCart(x.code + "-W", posterTypes.W);
-                    }}
-                  >
-                    W
-                    {getNo(x.code + "-W") === null
-                      ? ""
-                      : `:x` + getNo(x.code + "-W")}
-                  </button>
-                </div>
-                <div className="h-full w-1/3 border-2 border-black">
-                  <button
-                    className="btn h-full w-full min-w-fit rounded-md rounded-l-none rounded-r-none rounded-t-none bg-slate-400 py-1 text-start text-xs text-black xs:text-lg"
-                    onClick={() => {
-                      addToCart(x.code + "-M", posterTypes.M);
-                    }}
-                  >
-                    M
-                    {getNo(x.code + "-M") === null
-                      ? ""
-                      : `:x` + getNo(x.code + "-M")}
-                  </button>
-                </div>
-                <div className="h-full w-1/3 border-2 border-l-0 border-black">
-                  <button
-                    className="btn h-full w-full min-w-fit rounded-md rounded-t-none rounded-l-none bg-yellow-500 py-1  text-start text-xs text-black xs:text-lg"
-                    onClick={() => {
-                      addToCart(x.code + "-G", posterTypes.G);
-                    }}
-                  >
-                    G
-                    {getNo(x.code + "-G") === null
-                      ? ""
-                      : `:x` + getNo(x.code + "-G")}
-                  </button>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </>
   );

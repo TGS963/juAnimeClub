@@ -64,10 +64,14 @@ const Posters = () => {
         </p>
       </div>
       <div onLoad={getImages} className="m-5 flex flex-col justify-center">
-        {posterJSON.map((x) => {
+        {posterJSON.map((x, index) => {
           return (
             <div key={x.id} className="flex flex-col">
-              <GalleryAnime aniName={x.name} numbers={x.gallery} />
+              <GalleryAnime
+                aniName={x.name}
+                numbers={x.gallery}
+                index={index}
+              />
             </div>
           );
         })}

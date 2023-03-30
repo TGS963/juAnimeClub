@@ -43,24 +43,15 @@ const Posters = () => {
       <div className="sticky inset-0 z-10 mr-44 flex w-full flex-col items-center justify-center self-start break-words bg-black/50 p-2 py-5 text-center text-yellow-400 backdrop-blur-lg md:flex-row md:items-center md:justify-evenly md:p-0 md:text-center">
         <p>
           Gloss(G): (A3) (300+ gsm){" "}
-          <span className="text-slate-400">
-            <s>₹99</s>
-          </span>
-          <span className="text-emerald-400"> ₹69</span>
+          <span className="text-emerald-400"> ₹99</span>
         </p>
         <p>
           Matte(M): (A3) (300+ gsm){" "}
-          <span className="text-slate-400">
-            <s>₹99</s>
-          </span>
-          <span className="text-emerald-400"> ₹69</span>
+          <span className="text-emerald-400"> ₹99</span>
         </p>
         <p>
           WaterProof Matte(W): (A3) (225 micron){" "}
-          <span className="text-slate-400">
-            <s>₹169</s>
-          </span>
-          <span className="text-emerald-400"> ₹119</span>
+          <span className="text-emerald-400"> ₹149</span>
         </p>
       </div>
       <div onLoad={getImages} className="m-5 flex flex-col justify-center">

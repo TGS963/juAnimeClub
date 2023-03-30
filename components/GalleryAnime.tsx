@@ -20,18 +20,18 @@ interface GalleryProps {
 const GalleryAnime = ({ aniName, numbers, index }: GalleryProps) => {
   const router = useRouter();
 
-  const matte = 69;
-  const gloss = 69;
-  const waterproof = 119;
+  const matte = 99;
+  const gloss = 99;
+  const waterproof = 149;
   interface posterTypesInterface {
     M: number;
     G: number;
     W: number;
   }
   const posterTypes: posterTypesInterface = {
-    M: 69,
-    G: 69,
-    W: 119,
+    M: 99,
+    G: 99,
+    W: 149,
   };
   const [cartItems, setCartItems] = useRecoilState(cart);
   const [price, setPrice] = useRecoilState(cartPrice);

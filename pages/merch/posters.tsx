@@ -5,7 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 
 const Posters = () => {
-  const [liveBanner, setLiveBanner] = useState(true);
+  const [liveBanner, setLiveBanner] = useState(false);
   const getImages = async () => {
     const bgc = await fetch("/api/get-mockup", {
       method: "POST",
